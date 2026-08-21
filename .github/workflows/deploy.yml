@@ -25,12 +25,10 @@ jobs:
       # Build sem dependências: só Node. Não há npm ci porque o projeto
       # não tem pacotes de terceiros.
       - run: npm run build
-      # enablement: true faz a própria action ligar o GitHub Pages na primeira
-      # execução (usa a permissão pages: write acima), em vez de exigir que
-      # alguém marque "GitHub Actions" em Settings antes do primeiro deploy.
+      # Requer Pages já habilitado em Settings → Pages → Source: GitHub Actions.
+      # Tentar habilitar daqui (enablement: true) não funciona: o GITHUB_TOKEN
+      # não tem permissão para criar o site do Pages.
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
