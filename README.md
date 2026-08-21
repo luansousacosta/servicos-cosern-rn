@@ -43,13 +43,20 @@ rodapé, o card na home, o sitemap e o JSON-LD saem automaticamente. Campos obri
 ## Publicação (GitHub Pages)
 
 1. Suba este projeto para um repositório **público** (Pages exige repo público no plano gratuito).
-2. Em **Settings → Pages → Source**, escolha **GitHub Actions**.
+2. Em **Settings → Pages → Source**, escolha **GitHub Actions**. Sem isso o workflow
+   falha em `actions/configure-pages` com "Get Pages site failed" — e não adianta
+   usar `enablement: true`, porque o `GITHUB_TOKEN` não pode criar o site do Pages.
 3. O workflow `.github/workflows/deploy.yml` publica a cada push na `main`.
 4. No DNS de `sousacosta.com.br`, crie um registro **CNAME**:
    `servicos` → `luansousacosta.github.io`
-5. Em Settings → Pages, confirme o domínio `servicos.sousacosta.com.br` e marque **Enforce HTTPS**.
+5. Em **Settings → Pages → Custom domain**, digite `servicos.sousacosta.com.br` e salve.
+   Aguarde a verificação de DNS e então marque **Enforce HTTPS** (o certificado leva
+   alguns minutos; erro de TLS nesse intervalo é esperado).
 
-O arquivo `public/CNAME` já vai com o domínio, então o Pages não perde a configuração a cada deploy.
+> **Atenção:** em publicação por GitHub Actions, o arquivo `public/CNAME` **não**
+> configura o domínio sozinho — quem manda é o campo *Custom domain* das
+> configurações. O arquivo é mantido por compatibilidade, caso um dia se troque
+> para publicação direto de branch.
 
 ## O que já está feito de SEO
 
