@@ -38,7 +38,7 @@ const cardServico = (s) => `
     <a class="card__link" href="/servicos/${s.slug}/">Ver o serviço →</a>
   </article>`;
 
-export function paginaHome(css) {
+export function paginaHome(css, opcoes = {}) {
   const titulo = 'Energia Solar e Cosern no RN | Sousa Costa Energia';
   const descricao =
     'Projeto solar, rateio, ART, laudo técnico, titularidade, modalidade tarifária e revisão de faturas junto à Cosern. Consultoria técnica em todo o RN.';
@@ -230,5 +230,6 @@ export function paginaHome(css) {
     schemas,
     css,
     zapMsg: 'Olá! Vim pelo site e preciso de ajuda com um serviço junto à Cosern.',
+    ...opcoes,
   });
 }

@@ -103,9 +103,20 @@ const botaoZap = (mensagem) => `
  * Monta a página inteira. O CSS entra inline para eliminar requisição
  * bloqueante — a folha toda tem poucos KB e melhora o LCP no 4G.
  */
-export function pagina({ titulo, descricao, caminho, conteudo, schemas = [], zapMsg, css }) {
+export function pagina({ titulo, descricao, caminho, conteudo, schemas = [], zapMsg, css, relativizar = true }) {
   const url = `${SITE.dominio}${caminho}`;
-  return `<!doctype html>
+
+  /**
+   * Prefixo para transformar os caminhos absolutos em relativos, de modo que o
+   * site funcione tanto na raiz do domínio próprio quanto sob um subcaminho
+   * (ex.: usuario.github.io/repositorio/) enquanto o domínio não está ativo.
+   * URLs absolutas (canonical, Open Graph, JSON-LD) continuam apontando para o
+   * domínio oficial — são elas que o Google usa.
+   */
+  const profundidade = caminho === '/' ? 0 : caminho.replace(/^\/|\/$/g, '').split('/').length;
+  const base = profundidade === 0 ? './' : '../'.repeat(profundidade);
+
+  const html = `<!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8" />
@@ -150,4 +161,10 @@ ${rodape()}
 ${botaoZap(zapMsg ?? 'Olá! Vim pelo site e preciso de ajuda.')}
 </body>
 </html>`;
+
+  if (!relativizar) return html;
+
+  return html
+    .replace(/(href|src)="\/(?!\/)/g, `$1="${base}`)
+    .replace(/url\(\/fonts\//g, `url(${base}fonts/`);
 }

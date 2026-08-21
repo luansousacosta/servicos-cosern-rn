@@ -84,7 +84,7 @@ const favicon = () =>
  * mas com título e description próprios e fora do índice.
  */
 const pagina404 = (css) =>
-  paginaHome(css)
+  paginaHome(css, { relativizar: false })
     .replace('<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />',
              '<meta name="robots" content="noindex, follow" />')
     .replace(/<title>[^<]*<\/title>/, '<title>Página não encontrada | Sousa Costa Energia</title>')
