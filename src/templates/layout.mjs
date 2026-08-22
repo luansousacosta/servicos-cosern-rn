@@ -66,7 +66,7 @@ const rodape = () => `
     <div class="rodape__grid">
       <div>
         <img class="rodape__logo" src="/logo-sousa-costa-branca.png" alt="${esc(SITE.nome)}" width="160" height="42" loading="lazy" />
-        <p>Consultoria técnica em energia para projetos de geração distribuída e processos junto à distribuidora, em todo o Rio Grande do Norte.</p>
+        <p>Consultor autorizado Cosern. Projetos de energia e condução de processos junto à distribuidora, em todo o Rio Grande do Norte.</p>
         <p>
           <a href="${wa('Olá! Vim pelo site.')}" rel="noopener" target="_blank">WhatsApp ${esc(CONTATO.whatsappExibicao)}</a><br />
           <a href="tel:+${esc(CONTATO.whatsappAlt)}">${esc(CONTATO.whatsappAltExibicao)}</a><br />
@@ -76,19 +76,19 @@ const rodape = () => `
       <div>
         <h4>Serviços</h4>
         <ul>
-          ${SERVICOS.slice(0, 5).map((s) => `<li><a href="/servicos/${s.slug}/">${esc(s.nav)}</a></li>`).join('\n          ')}
+          ${SERVICOS.slice(0, Math.ceil(SERVICOS.length / 2)).map((s) => `<li><a href="/servicos/${s.slug}/">${esc(s.nav)}</a></li>`).join('\n          ')}
         </ul>
       </div>
       <div>
         <h4>Também fazemos</h4>
         <ul>
-          ${SERVICOS.slice(5).map((s) => `<li><a href="/servicos/${s.slug}/">${esc(s.nav)}</a></li>`).join('\n          ')}
+          ${SERVICOS.slice(Math.ceil(SERVICOS.length / 2)).map((s) => `<li><a href="/servicos/${s.slug}/">${esc(s.nav)}</a></li>`).join('\n          ')}
         </ul>
       </div>
     </div>
     <p class="rodape__base">
       © ${new Date().getFullYear()} ${esc(SITE.nome)} · Natal/RN · Atendimento nos 167 municípios do Rio Grande do Norte.<br />
-      Consultoria independente. Não possuímos vínculo societário com a Neoenergia Cosern; atuamos representando o cliente perante a distribuidora mediante procuração.
+      Consultor autorizado Cosern. Atuamos representando o cliente perante a distribuidora, mediante procuração — não somos a Neoenergia Cosern e não respondemos por ela.
       Prazos citados são os previstos na regulação da ANEEL e não constituem garantia de prazo da distribuidora.
     </p>
   </div>

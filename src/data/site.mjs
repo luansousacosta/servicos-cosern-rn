@@ -6,7 +6,7 @@ export const SITE = {
   nomeCurto: 'Sousa Costa',
   titulo: 'Serviços para energia solar e Cosern no RN',
   descricao:
-    'Consultoria técnica para projetos de energia solar e processos junto à Neoenergia Cosern no RN: solicitação de acesso, EMUC, rateio, ART, laudo técnico, troca de titularidade, modalidade tarifária e revisão de faturas.',
+    'Consultor autorizado Cosern no RN: projeto solar e de baixa tensão, alteração de carga, demanda, rateio, titularidade, dados cadastrais, modalidade tarifária, ART, laudo técnico e revisão de faturas.',
   idioma: 'pt-BR',
   regiao: 'RN',
   cidade: 'Natal',

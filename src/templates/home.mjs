@@ -6,7 +6,7 @@ import { esc, negocioJsonLd, pagina } from './layout.mjs';
 const FAQ_HOME = [
   {
     p: 'Vocês são da Cosern?',
-    r: 'Não. Somos uma consultoria técnica independente. Representamos o cliente perante a distribuidora mediante procuração — o que nos permite protocolar, acompanhar prazos e responder exigências no lugar dele.',
+    r: 'Somos consultor autorizado Cosern, o que nos habilita a conduzir processos junto à distribuidora. Não somos a Cosern e não falamos em nome dela: atuamos representando você, mediante procuração, para protocolar, acompanhar prazos e responder exigências.',
   },
   {
     p: 'Atendem em todo o Rio Grande do Norte?',
@@ -41,13 +41,13 @@ const cardServico = (s) => `
 export function paginaHome(css, opcoes = {}) {
   const titulo = 'Energia Solar e Cosern no RN | Sousa Costa Energia';
   const descricao =
-    'Projeto solar, rateio, ART, laudo técnico, titularidade, modalidade tarifária e revisão de faturas junto à Cosern. Consultoria técnica em todo o RN.';
+    'Consultor autorizado Cosern: projeto solar, carga, demanda, rateio, ART, titularidade, cadastro e revisão de faturas. Atendimento em todo o RN.';
 
   const conteudo = `
 <section class="hero">
   <div class="container hero__grid">
     <div>
-      <span class="pill">${CHECK} Consultoria técnica · Rio Grande do Norte</span>
+      <span class="pill">${CHECK} Consultor autorizado Cosern · Rio Grande do Norte</span>
       <h1>Resolvemos o que <span class="destaque">trava</span> seu projeto solar e sua conta de energia na Cosern</h1>
       <p class="hero__sub">
         Projeto e homologação de usinas, rateio de créditos, ART, laudo técnico, titularidade,
@@ -68,6 +68,7 @@ export function paginaHome(css, opcoes = {}) {
       <div class="painel__numero">12+ anos</div>
       <p class="painel__texto">de energia no Rio Grande do Norte — projeto, execução e operação de usinas.</p>
       <div class="painel__lista">
+        <div class="painel__item">${CHECK_CLARO}<span>Consultor autorizado Cosern, com acesso aos canais da distribuidora</span></div>
         <div class="painel__item">${CHECK_CLARO}<span>Processo conduzido de ponta a ponta, com procuração</span></div>
         <div class="painel__item">${CHECK_CLARO}<span>Responsável técnico próprio para assinar e responder exigências</span></div>
         <div class="painel__item">${CHECK_CLARO}<span>Diagnóstico antes do orçamento: você sabe o que está comprando</span></div>

@@ -13,6 +13,11 @@ export const ICONES = {
   pessoa: svg('<circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/>'),
   relogio: svg('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9"/>'),
   fatura: svg('<path d="M6 2h12a1 1 0 0 1 1 1v18l-3-2-3 2-3-2-3 2V3a1 1 0 0 1 1-1z"/><path d="M9 7h6M9 11h6M9 15h3"/>'),
+  raio: svg('<path d="M13 2L4.5 13.5H11l-1 8.5 8.5-11.5H12z"/>'),
+  medidor: svg('<circle cx="12" cy="12" r="9"/><path d="M12 12l4-3"/><path d="M7.5 16.5h9"/><path d="M12 5v1.5"/>'),
+  cartao: svg('<rect x="2.5" y="5" width="19" height="14" rx="2"/><circle cx="8.5" cy="11" r="2"/><path d="M5.2 16.2a3.6 3.6 0 0 1 6.6 0M14.5 10h4M14.5 13.5h4"/>'),
+  predios: svg('<path d="M3 21h18M4 21V7a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14M14 21V11a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v10M7 9h1M7 12h1M7 15h1M16.5 13.5h1M16.5 16.5h1"/>'),
+  tendencia: svg('<path d="M3 20h18"/><path d="M5 16l4.5-5 3.5 3 5.5-7"/><path d="M15 7h4v4"/>'),
   escudo: svg('<path d="M12 2.5l7.5 3v6c0 4.6-3.1 8.7-7.5 10-4.4-1.3-7.5-5.4-7.5-10v-6z"/><path d="M9.2 11.8l1.9 1.9 3.7-3.7"/>'),
 };
 
