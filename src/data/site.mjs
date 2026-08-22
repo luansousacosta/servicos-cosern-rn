@@ -51,7 +51,7 @@ export const CIDADES_ATENDIDAS = [
  *   adsConversaoWhatsapp → rótulo da conversão, "AW-XXXXXXXXX/AbCdEfGhIj"
  */
 export const ANALYTICS = {
-  ga4: '',
+  ga4: 'G-236DB6S5SY',
   adsId: 'AW-658673813',
   adsConversaoWhatsapp: 'AW-658673813/m5MKCLe76c0cEJWhiroC',
 };
