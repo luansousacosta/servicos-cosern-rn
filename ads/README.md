@@ -13,6 +13,11 @@ Arquivos desta pasta:
 Todos os textos foram validados contra os limites do Google (título 30, descrição 90,
 caminho 15 caracteres).
 
+> **Nada de símbolos fora do padrão no texto do anúncio.** Um título com `~`
+> ("~4 MWp") foi reprovado pelo Google com política do tipo `PROHIBITED` e
+> derrubou o grupo inteiro. Trocado por "Quase 4 MWp Implantados", passou.
+> O mesmo vale para `*`, `#` e emojis.
+
 ---
 
 ## Estrutura e verba

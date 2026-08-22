@@ -52,6 +52,6 @@ export const CIDADES_ATENDIDAS = [
  */
 export const ANALYTICS = {
   ga4: '',
-  adsId: '',
-  adsConversaoWhatsapp: '',
+  adsId: 'AW-658673813',
+  adsConversaoWhatsapp: 'AW-658673813/m5MKCLe76c0cEJWhiroC',
 };
