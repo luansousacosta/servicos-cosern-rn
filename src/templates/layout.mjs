@@ -53,7 +53,7 @@ const cabecalho = () => `
       <a href="/#servicos">Serviços</a>
       <a href="/#como-funciona">Como funciona</a>
       <a href="/#perguntas">Dúvidas</a>
-      <a class="btn btn--primario cabecalho__cta nav-mobile"
+      <a class="btn btn--zap cabecalho__cta nav-mobile"
          href="${wa('Olá! Vim pelo site e preciso de ajuda com um serviço.')}"
          rel="noopener" target="_blank"><span class="so-desktop">Falar no</span> WhatsApp</a>
     </nav>

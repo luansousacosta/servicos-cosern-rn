@@ -94,6 +94,10 @@ li { margin-bottom: .5rem; }
 .btn--claro:hover { background: var(--bg-soft); }
 .btn--lime { background: var(--lime); color: var(--ink); }
 .btn--lime:hover { background: #8ac524; }
+/* CTA do topo na cor do WhatsApp: o visitante reconhece o canal antes de ler
+   o rótulo, e fica coerente com o botão flutuante. */
+.btn--zap { background: #25D366; color: #0b3d21; border-color: #25D366; }
+.btn--zap:hover { background: #1fbe5a; color: #0b3d21; }
 
 /* ---------- Header ---------- */
 .cabecalho {
