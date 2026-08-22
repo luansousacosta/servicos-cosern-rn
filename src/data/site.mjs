@@ -40,3 +40,18 @@ export const CIDADES_ATENDIDAS = [
   'Mossoró', 'Caicó', 'Currais Novos', 'Assú', 'João Câmara',
   'Santa Cruz', 'Nova Cruz', 'São José de Mipibu', 'Ceará-Mirim', 'Touros',
 ];
+
+/**
+ * Medição. Enquanto os campos estiverem vazios, NENHUM script externo é
+ * carregado — o site continua sem requisição a terceiros. Basta preencher
+ * o ID e publicar para as tags entrarem.
+ *
+ *   ga4                  → GA4, formato "G-XXXXXXXXXX"
+ *   adsId                → Google Ads, formato "AW-XXXXXXXXX"
+ *   adsConversaoWhatsapp → rótulo da conversão, "AW-XXXXXXXXX/AbCdEfGhIj"
+ */
+export const ANALYTICS = {
+  ga4: '',
+  adsId: '',
+  adsConversaoWhatsapp: '',
+};

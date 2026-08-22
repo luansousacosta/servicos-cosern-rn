@@ -55,7 +55,7 @@ export function paginaHome(css, opcoes = {}) {
         e conduz o processo do início ao fim.
       </p>
       <div class="hero__ctas">
-        <a class="btn btn--primario" href="${wa('Olá! Vim pelo site. Preciso de ajuda com um serviço junto à Cosern.')}" rel="noopener" target="_blank">
+        <a class="btn btn--primario" data-local="hero" href="${wa('Olá! Vim pelo site. Preciso de ajuda com um serviço junto à Cosern.')}" rel="noopener" target="_blank">
           Falar no WhatsApp
         </a>
         <a class="btn btn--contorno" href="#servicos">Ver os serviços</a>
@@ -182,10 +182,10 @@ export function paginaHome(css, opcoes = {}) {
       e qual o caminho — mesmo quando o caminho não passa por contratar a gente.
     </p>
     <div class="faixa-cta__acoes">
-      <a class="btn btn--lime" href="${wa('Olá! Vim pelo site. Quero falar sobre o meu caso.')}" rel="noopener" target="_blank">
+      <a class="btn btn--lime" data-local="faixa" href="${wa('Olá! Vim pelo site. Quero falar sobre o meu caso.')}" rel="noopener" target="_blank">
         Falar no WhatsApp ${esc(CONTATO.whatsappExibicao)}
       </a>
-      <a class="btn btn--claro" href="mailto:${esc(CONTATO.email)}">Enviar e-mail</a>
+      <a class="btn btn--claro" data-local="faixa" href="mailto:${esc(CONTATO.email)}">Enviar e-mail</a>
     </div>
   </div>
 </section>`;

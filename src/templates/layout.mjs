@@ -1,4 +1,4 @@
-import { CONTATO, SITE, wa } from '../data/site.mjs';
+import { ANALYTICS, CONTATO, SITE, wa } from '../data/site.mjs';
 import { SERVICOS } from '../data/servicos.mjs';
 import { ZAP } from './icones.mjs';
 
@@ -55,7 +55,7 @@ const cabecalho = () => `
       <a href="/#perguntas">Dúvidas</a>
       <a class="btn btn--zap cabecalho__cta nav-mobile"
          href="${wa('Olá! Vim pelo site e preciso de ajuda com um serviço.')}"
-         rel="noopener" target="_blank"><span class="so-desktop">Falar no</span> WhatsApp</a>
+         rel="noopener" target="_blank" data-local="topo"><span class="so-desktop">Falar no</span> WhatsApp</a>
     </nav>
   </div>
 </header>`;
@@ -68,7 +68,7 @@ const rodape = () => `
         <img class="rodape__logo" src="/logo-sousa-costa-branca.png" alt="${esc(SITE.nome)}" width="160" height="42" loading="lazy" />
         <p>Consultor autorizado Cosern. Projetos de energia e condução de processos junto à distribuidora, em todo o Rio Grande do Norte.</p>
         <p>
-          <a href="${wa('Olá! Vim pelo site.')}" rel="noopener" target="_blank">WhatsApp ${esc(CONTATO.whatsappExibicao)}</a><br />
+          <a href="${wa('Olá! Vim pelo site.')}" rel="noopener" target="_blank" data-local="rodape">WhatsApp ${esc(CONTATO.whatsappExibicao)}</a><br />
           <a href="tel:+${esc(CONTATO.whatsappAlt)}">${esc(CONTATO.whatsappAltExibicao)}</a><br />
           <a href="mailto:${esc(CONTATO.email)}">${esc(CONTATO.email)}</a>
         </p>
@@ -95,7 +95,7 @@ const rodape = () => `
 </footer>`;
 
 const botaoZap = (mensagem) => `
-<a class="zap" href="${wa(mensagem)}" rel="noopener" target="_blank" aria-label="Falar no WhatsApp">
+<a class="zap" href="${wa(mensagem)}" rel="noopener" target="_blank" data-local="flutuante" aria-label="Falar no WhatsApp">
   ${ZAP}<span>Falar no WhatsApp</span>
 </a>`;
 
@@ -103,6 +103,46 @@ const botaoZap = (mensagem) => `
  * Monta a página inteira. O CSS entra inline para eliminar requisição
  * bloqueante — a folha toda tem poucos KB e melhora o LCP no 4G.
  */
+/**
+ * Tags de medição + rastreio de conversão.
+ *
+ * A conversão que importa aqui é o clique no WhatsApp: é o único momento em
+ * que o visitante vira contato. Cada clique dispara um evento com o serviço
+ * (pela URL) e o local do botão (topo, hero, faixa, flutuante, rodapé), o que
+ * permite ver depois QUAL serviço e QUAL posição da página trazem contato.
+ *
+ * Devolve string vazia enquanto nenhum ID estiver configurado.
+ */
+function medicao() {
+  const { ga4, adsId, adsConversaoWhatsapp } = ANALYTICS;
+  if (!ga4 && !adsId) return '';
+
+  const idCarregador = ga4 || adsId;
+  const configs = [ga4 && `gtag('config','${ga4}');`, adsId && `gtag('config','${adsId}');`]
+    .filter(Boolean)
+    .join('');
+
+  const conversaoAds = adsConversaoWhatsapp
+    ? `if(zap){gtag('event','conversion',{send_to:'${adsConversaoWhatsapp}'});}`
+    : '';
+
+  return `
+<script async src="https://www.googletagmanager.com/gtag/js?id=${idCarregador}"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());${configs}
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a');if(!a)return;
+  var href=a.getAttribute('href')||'';
+  var zap=href.indexOf('wa.me')>-1, email=href.indexOf('mailto:')===0;
+  if(!zap&&!email)return;
+  var dados={servico:document.body.getAttribute('data-servico')||'home',local:a.getAttribute('data-local')||'outro'};
+  gtag('event',zap?'contato_whatsapp':'contato_email',dados);
+  ${conversaoAds}
+},true);
+</script>`;
+}
+
 export function pagina({ titulo, descricao, caminho, conteudo, schemas = [], zapMsg, css, relativizar = true }) {
   const url = `${SITE.dominio}${caminho}`;
 
@@ -151,8 +191,9 @@ export function pagina({ titulo, descricao, caminho, conteudo, schemas = [], zap
 <link rel="preload" href="/fonts/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin />
 <style>${css}</style>
 ${schemas.map(jsonLd).join('\n')}
+${medicao()}
 </head>
-<body>
+<body data-servico="${caminho === '/' ? 'home' : caminho.replace(/^\/servicos\/|\/$/g, '')}">
 ${cabecalho()}
 <main id="conteudo">
 ${conteudo}

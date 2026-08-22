@@ -23,7 +23,7 @@ export function paginaServico(s, css) {
       <h1>${esc(s.h1)}</h1>
       <p class="hero__sub">${esc(s.resumo)}</p>
       <div class="hero__ctas">
-        <a class="btn btn--primario" href="${wa(s.waMsg)}" rel="noopener" target="_blank">Falar no WhatsApp</a>
+        <a class="btn btn--primario" data-local="hero" href="${wa(s.waMsg)}" rel="noopener" target="_blank">Falar no WhatsApp</a>
         <a class="btn btn--contorno" href="#como">Como funciona</a>
       </div>
       <p class="hero__nota">Orçamento sob consulta · Diagnóstico antes da proposta</p>
@@ -113,10 +113,10 @@ ${
       o que falta e como conduzimos — sem compromisso.
     </p>
     <div class="faixa-cta__acoes">
-      <a class="btn btn--lime" href="${wa(s.waMsg)}" rel="noopener" target="_blank">
+      <a class="btn btn--lime" data-local="faixa" href="${wa(s.waMsg)}" rel="noopener" target="_blank">
         Falar no WhatsApp ${esc(CONTATO.whatsappExibicao)}
       </a>
-      <a class="btn btn--claro" href="mailto:${esc(CONTATO.email)}?subject=${encodeURIComponent(s.nav)}">Enviar e-mail</a>
+      <a class="btn btn--claro" data-local="faixa" href="mailto:${esc(CONTATO.email)}?subject=${encodeURIComponent(s.nav)}">Enviar e-mail</a>
     </div>
   </div>
 </section>`;
