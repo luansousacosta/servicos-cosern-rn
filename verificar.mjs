@@ -61,7 +61,16 @@ for (const arquivo of arquivos) {
   const h1 = html.match(/<h1[^>]*>/g) ?? [];
   if (h1.length !== 1) falha(rota, `${h1.length} elementos <h1> (esperado exatamente 1)`);
 
-  if (indexavel && !/<link rel="canonical" href="https:\/\//.test(html)) falha(rota, 'sem canonical absoluto');
+  // Canonical precisa apontar para a própria URL. Canonical cruzado é a causa
+  // técnica clássica de "detectada, mas não indexada": o Google trata a página
+  // como duplicata de outra e não a indexa.
+  const canonical = html.match(/<link rel="canonical" href="([^"]*)"/)?.[1];
+  if (indexavel) {
+    const esperado = `https://servicos.sousacosta.com.br${rota}`;
+    if (!canonical) falha(rota, 'sem canonical');
+    else if (!canonical.startsWith('https://')) falha(rota, `canonical não é absoluto: ${canonical}`);
+    else if (canonical !== esperado) falha(rota, `canonical aponta para outra URL: ${canonical} (esperado ${esperado})`);
+  }
   if (!/<meta property="og:image"/.test(html)) falha(rota, 'sem og:image');
   if (!/<html lang="pt-BR">/.test(html)) falha(rota, 'sem lang="pt-BR"');
 
