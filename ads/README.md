@@ -137,3 +137,23 @@ melhorar a taxa de cliques nessas buscas — mas só depois da autorização.
    verba igual é ponto de partida, não regra permanente.
 4. Confira, no GA4, quais páginas de serviço convertem. Serviço com muita visita e
    nenhum contato costuma ser problema da página, não do anúncio.
+
+## Campanha de recarga veicular (agosto/2026)
+
+Criada junto com a página `/servicos/carregador-de-veiculo-eletrico-condominio/`.
+
+| Arquivo | O que é |
+|---|---|
+| `prompt-anuncio-recarga-veicular.md` | roteiro para o plugin criar a campanha pausada |
+| `anuncios-recarga-veicular.csv` | o anúncio responsivo, 15 títulos e 4 descrições |
+| `palavras-chave-recarga-veicular.csv` | 14 palavras em frase e exata |
+| `palavras-negativas-recarga-veicular.txt` | 22 negativas do tema |
+
+Duas coisas específicas deste tema:
+
+- **"vaga" é ambíguo em português** — vaga de garagem e vaga de emprego. As cinco
+  primeiras negativas existem por causa disso. Sem elas, parte do clique vem de quem
+  procura trabalho.
+- **A verba não comporta as quatro campanhas.** Somando esta, o total passa a R$ 53/dia
+  contra os R$ 40 definidos. A recomendação é ativar duas — Recarga Veicular e
+  Solar e GD, R$ 27/dia — em vez de dividir R$ 40 em quatro frentes que não aprendem.
