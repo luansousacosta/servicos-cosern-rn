@@ -120,3 +120,41 @@ O efeito não é imediato: o Google precisa rastrear o institucional de novo par
 os links. Costuma levar de alguns dias a duas semanas. O sinal de que funcionou aparece
 no Search Console do subdomínio, em **Links → Sites com links para o site**, e na queda
 do número de páginas em "Detectada, mas não indexada".
+
+---
+
+## Verificação depois que a branch subir para produção
+
+O institucional é SPA Vite sem SSR. A implementação colocou os links em dois lugares:
+no bloco estático dentro de `#root` do `index.html` (que sai no HTML cru) e nos
+componentes React (que só existem depois do JS rodar). Antes de considerar a tarefa
+concluída, confirme estes três pontos — nesta ordem.
+
+**1. O bloco estático não pode estar oculto.** Link dentro de `<noscript>`, ou num
+elemento com `display:none`, `visibility:hidden`, `hidden` ou altura zero, não conta
+como link normal para o Google. Rode na raiz do repositório institucional:
+
+```bash
+npm run build
+grep -o '<noscript>[\s\S]*</noscript>' dist/index.html   # os links NÃO podem estar aqui
+grep -n 'servicos.sousacosta.com.br' dist/index.html      # devem estar fora dele
+```
+
+E confira no CSS se o container do bloco de fallback tem alguma regra que o esconda
+antes do React montar. Se tiver, os links precisam sair de dentro dele.
+
+**2. O HTML de produção precisa conter os links.** Depois do deploy, sem executar JS:
+
+```bash
+curl -s https://sousacosta.com.br/ | grep -c 'servicos.sousacosta.com.br'
+```
+
+Zero significa que a hospedagem serve um `index.html` diferente do que a build gera.
+
+**3. O que o Google realmente vê.** No Search Console da propriedade do
+**institucional**, use Inspeção de URL → Testar URL ativo → Ver página testada → HTML.
+É o HTML renderizado que o Googlebot obtém, depois do JS. Procure os links ali. Esse é
+o teste que vale — os dois anteriores são pré-requisitos dele.
+
+**Enquanto a branch não estiver em produção, nada disso tem efeito de SEO.** Link em
+branch não é rastreado.
