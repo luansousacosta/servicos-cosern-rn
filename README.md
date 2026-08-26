@@ -1,10 +1,11 @@
 # Serviços de energia e Cosern — Sousa Costa Energia
 
 Site estático de captação para os serviços de consultoria em energia no Rio Grande do Norte:
-projeto solar, EMUC, rateio de créditos, ART, laudo técnico, análise de problemas, titularidade,
-modalidade tarifária, consultoria de faturamento e demandas junto à Neoenergia Cosern.
+projeto solar, recarga de veículos elétricos em condomínios, EMUC, rateio de créditos, ART, laudo
+técnico, análise de problemas, titularidade, modalidade tarifária, consultoria de faturamento e
+demandas junto à Neoenergia Cosern.
 
-**11 páginas**, uma URL por serviço, HTML pronto no primeiro byte.
+**17 páginas**, uma URL por serviço, HTML pronto no primeiro byte.
 Sem framework e **sem nenhuma dependência de terceiros** — o build usa só o Node.
 
 ## Por que HTML estático e não React
@@ -17,19 +18,25 @@ JSON-LD próprios. O visual é o mesmo do site institucional — só a entrega m
 ## Rodar localmente
 
 ```bash
-npm run dev      # gera dist/ e sobe http://localhost:5180
-npm run build    # só gera dist/
+npm run dev        # gera dist/ e sobe http://localhost:5180
+npm run build      # só gera dist/
+npm run verificar  # gera dist/ e roda a verificação de SEO técnico
 ```
+
+`verificar.mjs` falha o build quando encontra o tipo de erro que só apareceria semanas depois no
+Search Console: título acima de 60 caracteres, description acima de 156 ou duplicada, mais de um
+`<h1>`, JSON-LD inválido, `<img>` sem `alt`, link interno quebrado ou página fora do sitemap.
 
 ## Como está organizado
 
 ```
 src/data/site.mjs         contatos, domínio, números de prova social
-src/data/servicos.mjs     conteúdo dos 10 serviços — é aqui que você edita textos
+src/data/servicos.mjs     conteúdo dos 16 serviços — é aqui que você edita textos
 src/templates/            layout (head/SEO), home e página de serviço
 src/styles/estilo.css     tokens da marca (indigo #3E4095, lime #9AD629, Instrument Serif + Sora)
 public/                   logos, imagem de compartilhamento, CNAME
 build.mjs                 gera dist/ + sitemap.xml + robots.txt + 404.html
+verificar.mjs             checagem de SEO técnico do dist/
 ```
 
 ### Adicionar um serviço novo
@@ -39,6 +46,15 @@ rodapé, o card na home, o sitemap e o JSON-LD saem automaticamente. Campos obri
 
 `slug`, `nav`, `chamada`, `icone`, `titulo`, `h1`, `descricao`, `badge`, `resumo`, `paraQuem[]`,
 `entregaveis[]`, `documentos[]`, `passos[]`, `prazoNota`, `faq[]`, `relacionados[]`, `keywords[]`, `waMsg`.
+
+Campos opcionais:
+
+| Campo | Efeito |
+|---|---|
+| `respostaCurta` | parágrafo "Em resumo" no topo da página e `abstract` do `WebPage` — é o trecho que buscador e assistente citam |
+| `secoes[]` | blocos de aprofundamento (`{rotulo, titulo, intro, itens:[{t,d}]}`) renderizados antes do FAQ |
+| `destaque` | marca o card na home e sobe a prioridade no sitemap |
+| `atualizado` | data `AAAA-MM-DD` usada no `lastmod` do sitemap e no `dateModified` do JSON-LD |
 
 ## Publicação (GitHub Pages)
 
@@ -61,7 +77,15 @@ rodapé, o card na home, o sitemap e o JSON-LD saem automaticamente. Campos obri
 ## O que já está feito de SEO
 
 - URL própria por serviço, com `<title>`, meta description e canonical exclusivos
-- JSON-LD: `ProfessionalService`, `Service`, `FAQPage`, `BreadcrumbList`, `ItemList`, `WebSite`
+- JSON-LD: `ProfessionalService`, `WebPage`, `Service`, `FAQPage`, `BreadcrumbList`, `ItemList`, `WebSite`,
+  ligados por `@id` para formar um grafo de entidade em vez de blocos soltos
+- Bloco "Em resumo" no topo de cada página: resposta direta e autocontida, que é o formato que
+  featured snippet e resposta gerada por IA extraem
+- `lastmod` do sitemap vem da data declarada no serviço, não da data do build — carimbar tudo como
+  alterado a cada deploy vira ruído e o Google passa a ignorar o campo
+- `robots.txt` libera explicitamente GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot, Google-Extended
+  e Applebot-Extended: só é citado em resposta de IA quem foi lido
+- `preconnect` para o Google Tag Manager, reduzindo o custo do script de medição no LCP
 - Open Graph e Twitter Card com imagem 1200×630 própria
 - `sitemap.xml` e `robots.txt` gerados no build
 - CSS inline (sem requisição bloqueante), fontes com `display=swap`, imagens com dimensões

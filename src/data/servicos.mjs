@@ -9,6 +9,126 @@
 
 export const SERVICOS = [
   {
+    slug: 'carregador-de-veiculo-eletrico-condominio',
+    destaque: true,
+    atualizado: '2026-08-26',
+    chamada: 'Projeto, medição por vaga, instalação e aumento de carga para recarga de carro elétrico na garagem — dentro da RT 05 do CBMRN.',
+    nav: 'Recarga veicular (SAVE)',
+    icone: 'carregador',
+    titulo: 'Carregador de Carro Elétrico em Condomínio | RN',
+    h1: 'Recarga de veículos elétricos em condomínios e edifícios',
+    descricao:
+      'Projeto, medição por vaga, instalação e aumento de carga para carregador de carro elétrico em condomínios do RN, conforme a RT 05 do CBMRN e a NBR 17019.',
+    badge: 'Condomínios e edifícios',
+    respostaCurta:
+      'No Rio Grande do Norte, ponto de recarga em garagem de condomínio só é regular com estação dedicada em modo 3 ou 4, circuito exclusivo por vaga, DR de 30 mA por ponto, disjuntor de corte, sinalização normativa e afastamento de 5 m das rotas de fuga — exigências da RT 05 do CBMRN, em vigor desde 15/07/2026, sem prazo de adaptação. Carregador portátil ligado na tomada da vaga não é regularizável em garagem interna. Fazemos o diagnóstico, o projeto com ART, o memorial SAVE, a instalação e o processo de carga junto à Cosern.',
+    resumo:
+      'A garagem virou instalação elétrica de risco especial. Conduzimos o pacote inteiro: diagnóstico de conformidade contra a RT 05 do CBMRN e a NBR 17019, estudo de demanda para não estourar os 75 kW, projeto elétrico com ART, medição e rateio por vaga, fornecimento e instalação das estações e o aumento de carga junto à Cosern quando for necessário.',
+    paraQuem: [
+      'Síndicos e administradoras com moradores pedindo ponto de recarga na vaga',
+      'Condomínios que já têm carregador improvisado na tomada e precisam regularizar',
+      'Incorporadoras e construtoras preparando garagem de empreendimento novo',
+      'Condomínios notificados pelo Corpo de Bombeiros ou cobrados pela seguradora',
+      'Empresas, hotéis e estacionamentos instalando recarga para clientes e frota',
+    ],
+    entregaveis: [
+      'Diagnóstico de conformidade vaga a vaga contra a RT 05 do CBMRN e as normas ABNT',
+      'Estudo de capacidade elétrica: carga instalada, demanda e curva de carga do prédio',
+      'Comparativo entre controle de recarga e aumento do padrão de entrada, com custo',
+      'Projeto elétrico com ART, conforme NBR 5410 e NBR 17019',
+      'Memorial Descritivo SAVE e Formulário de Atividade Técnica (FAT) para o CBMRN',
+      'Medição individual por vaga e regra de rateio do consumo entre os condôminos',
+      'Fornecimento e instalação das estações, com controle dinâmico de carga',
+      'Solicitação de aumento de carga na Cosern e acompanhamento até a conclusão',
+    ],
+    documentos: [
+      'Fatura recente do condomínio (com o número da UC e a carga contratada)',
+      'CNPJ do condomínio, convenção e ata de eleição do síndico',
+      'Projeto de segurança contra incêndio aprovado e certificado de licenciamento do CBMRN',
+      'Planta da garagem com a numeração das vagas',
+      'Quadro de cargas ou projeto elétrico existente da edificação, se houver',
+      'Relação das vagas que vão receber ponto de recarga',
+      'Procuração para representação junto à distribuidora',
+    ],
+    secoes: [
+      {
+        rotulo: 'Base normativa',
+        titulo: 'Cinco documentos que precisam ser atendidos ao mesmo tempo',
+        intro:
+          'Não existe uma norma única de recarga veicular. A norma do Corpo de Bombeiros importa as normas da ABNT para dentro dela: cumprir só o que o bombeiro vistoria não basta.',
+        itens: [
+          { t: 'Diretriz Nacional CNCGBM/LIGABOM', d: 'Aprovada pela Portaria nº 029/LIGABOM/2025 e vigente desde 22/02/2026. Define o piso nacional de segurança contra incêndio em garagens com SAVE, mas não se aplica sozinha — cada estado a implementa.' },
+          { t: 'Resolução Técnica nº 05 do CBMRN', d: 'Em vigor desde 15/07/2026. É a norma efetivamente cobrada na vistoria no RN. Reproduz a diretriz nacional e vai além dela em cinco pontos.' },
+          { t: 'ABNT NBR 17019:2022', d: 'Norma de instalação elétrica para alimentação de veículos elétricos. Traz o circuito dedicado por vaga, o DR de 30 mA por ponto, o DPS, os graus IPX4/IP4X e IK08 — e o fator de demanda igual a 1.' },
+          { t: 'ABNT NBR 5410:2004', d: 'A base sobre a qual a NBR 17019 opera. Tudo o que a 17019 não altera continua valendo: dimensionamento, proteção, aterramento, quadros e verificação final.' },
+          { t: 'ABNT NBR IEC 61851-1', d: 'Define os modos de recarga 1, 2, 3 e 4. Sem ela, as expressões "modo 3" e "modo 4" usadas pelas normas de bombeiros não teriam significado técnico.' },
+        ],
+      },
+      {
+        rotulo: 'Onde o RN aperta',
+        titulo: 'Projeto feito só pela diretriz nacional é reprovado aqui',
+        intro:
+          'A RT 05 do CBMRN é mais rigorosa que o piso nacional em cinco pontos. Quem desenha olhando apenas para a diretriz entrega projeto que não passa no Rio Grande do Norte.',
+        itens: [
+          { t: 'Afastamento de 5 m das rotas de fuga', d: 'A diretriz nacional exige o afastamento apenas em edificações com uma única rota de saída. A RT 05 exige que toda vaga com ponto de recarga mantenha 5 m de qualquer trecho das rotas de saída, medidos do perímetro de demarcação da vaga.' },
+          { t: 'Sinalização especificada', d: 'A placa precisa ser refletiva, com letras maiúsculas de no mínimo 10 mm, brancas sobre fundo vermelho, com o texto normativo completo do desligamento rápido. Não é sinalização genérica.' },
+          { t: 'Memorial Descritivo SAVE obrigatório', d: 'Formulário anexo à norma estadual, apresentado no ato de entrega do projeto de segurança contra incêndio. Sem ele, o projeto não entra.' },
+          { t: 'Vagas identificadas em planta', d: 'As vagas com ponto de recarga devem aparecer identificadas nas plantas do projeto de segurança contra incêndio e pânico.' },
+          { t: 'Definição rigorosa de garagem externa', d: 'Só é externa a garagem fora da projeção da edificação e com todas as faces abertas, sem paredes. Garagem de subsolo ou sob o prédio é interna — e nela os modos 1 e 2 são vedados.' },
+        ],
+      },
+      {
+        rotulo: 'O ponto que quase ninguém calculou',
+        titulo: 'Demanda: o item que inviabiliza o projeto depois de aprovado',
+        intro:
+          'A NBR 17019 determina, no item 4.2.1.1.103, que o fator de demanda do circuito de distribuição seja igual a 1 — salvo se houver controle de recarga. Sem controle, o projeto é obrigado a somar 100% da potência de todos os carregadores à carga instalada. Não se pode arbitrar que "nunca todos vão carregar ao mesmo tempo".',
+        itens: [
+          { t: 'O que acontece com um prédio típico', d: 'Carga instalada de 45 kW mais oito vagas de 7,4 kW somam 104,2 kW com fator 1,0. Pelo art. 23 da REN ANEEL 1.000/2021, acima de 75 kW a unidade sai do Grupo B e passa a ser atendida em média tensão.' },
+          { t: 'O custo de cruzar os 75 kW', d: 'Deixa de ser ajuste de quadro e vira outra obra: entrada em média tensão, cabine primária, transformador próprio, projeto e aprovação na distribuidora, medição em MT, demanda contratada e manutenção periódica de subestação.' },
+          { t: 'A saída que a própria norma abre', d: 'Com controle de recarga — sistema de gestão que assegura que a soma das correntes não excede um valor predeterminado — o mesmo prédio fica em 70 kW e permanece no Grupo B, com as oito vagas atendidas e a potência distribuída dinamicamente.' },
+          { t: 'Acordo em ata não vale como limitação', d: 'A NBR 17019 exige que a corrente máxima seja configurada por chave, programação ou meio equivalente, acessível apenas a pessoa advertida ou qualificada. Combinado entre moradores não reduz o fator de demanda no projeto.' },
+          { t: 'Quando o aumento de carga é o caminho certo', d: 'Nem sempre o controle resolve. Quando a carga do próprio prédio já está no limite, o caminho é solicitar aumento de carga à Cosern e adequar o padrão de entrada — processo que conduzimos junto com o projeto.' },
+        ],
+      },
+      {
+        rotulo: 'Medição e rateio',
+        titulo: 'Quem carrega o carro paga a energia que usou',
+        intro:
+          'O ponto de recarga fica ligado ao relógio do condomínio. Sem individualização, a conta da área comum sobe e todos pagam pelo carro de alguns — é a principal fonte de conflito em assembleia.',
+        itens: [
+          { t: 'Medição por vaga', d: 'Cada ponto recebe medição própria, seja por medidor individual no circuito, seja pela medição interna da estação de recarga.' },
+          { t: 'Identificação do usuário', d: 'Estações com controle de acesso por cartão ou aplicativo registram quem carregou, quando e quanto — o relatório vira a base do rateio.' },
+          { t: 'Regra de rateio', d: 'Definimos o critério com o síndico: repasse do kWh medido pela tarifa da fatura, com ou sem parcela de custo fixo da infraestrutura, e a forma de lançamento no boleto do condomínio.' },
+          { t: 'Registro em ata', d: 'Intervenção em área comum e cobrança individualizada precisam de deliberação em assembleia. Entregamos a memória de cálculo e o texto técnico para a ata.' },
+        ],
+      },
+    ],
+    passos: [
+      { t: 'Levantar o que já existe na garagem', d: 'Percorremos as vagas e registramos, com foto, todo ponto de recarga em uso — inclusive tomadas improvisadas e extensões. É o que a vistoria vai encontrar, e é a base do diagnóstico.' },
+      { t: 'Classificar a edificação', d: 'Definimos se há exigência de hidrantes e mangotinhos, se a garagem é interna ou externa pelo critério da RT 05 e se o prédio é novo ou existente. Essas três respostas determinam quais itens da norma se aplicam.' },
+      { t: 'Avaliar a capacidade elétrica antes de escolher o carregador', d: 'Carga instalada, demanda e curva de carga da edificação. É aqui que se decide entre controle de recarga e aumento de entrada — e essa decisão muda o orçamento inteiro.' },
+      { t: 'Projeto com ART e memorial SAVE', d: 'Projeto elétrico conforme NBR 5410 e NBR 17019, Memorial Descritivo SAVE e, quando for prédio existente, o laudo de gerenciamento de riscos.' },
+      { t: 'Assembleia com números', d: 'Levamos as duas hipóteses de custo — com e sem controle de recarga —, a regra de rateio, o cronograma e as datas-limite. Intervenção em área comum exige deliberação registrada em ata.' },
+      { t: 'Executar, protocolar e comunicar', d: 'Instalação das estações, protocolo no CBMRN (projeto ou FAT), aumento de carga na Cosern quando necessário, atualização do certificado de licenciamento e comunicação formal à seguradora.' },
+    ],
+    prazoNota:
+      'As exigências elétricas do item 5.1 da RT 05 valem desde 15/07/2026, sem possibilidade de prorrogação — modos 3 e 4, pontos de desligamento, disjuntor de corte, sinalização, identificação em planta e os 5 m das rotas de fuga já são exigíveis hoje. O prazo de dois anos, até 15/07/2028, alcança apenas as medidas estruturais do item 5.4 (chuveiros interligados, detecção e gerenciamento de riscos) e só nas edificações onde já se exige hidrantes e mangotinhos. Prazos e exigências devem ser confirmados junto ao CBMRN e à distribuidora.',
+    faq: [
+      { p: 'Posso deixar o carregador portátil ligado na tomada da vaga?', r: 'Em garagem interna, não. A RT 05 do CBMRN admite apenas os modos 3 e 4 nessas garagens, e considera interna toda garagem que não esteja fora da projeção do edifício com todas as faces abertas. A maioria das garagens de condomínio no RN fica sob a projeção do prédio ou tem ao menos uma parede — nelas o carregador portátil não é regularizável. Não é questão de laudo: é vedação normativa.' },
+      { p: 'Qual norma trata de carregador de carro elétrico em condomínio no RN?', r: 'A Resolução Técnica nº 05 do CBMRN, em vigor desde 15 de julho de 2026, é a norma cobrada na vistoria. Ela reproduz a Diretriz Nacional CNCGBM/LIGABOM e determina o atendimento integral às NBR 5410, NBR 17019 e NBR IEC 61851-1. São cinco documentos que precisam ser atendidos ao mesmo tempo.' },
+      { p: 'Instalar carregadores obriga o condomínio a aumentar o padrão de entrada?', r: 'Depende da carga já instalada. A NBR 17019 impõe fator de demanda igual a 1, ou seja, o projeto soma 100% da potência de todos os pontos. Se o resultado passar de 75 kW, a unidade sai do Grupo B e migra para média tensão, com cabine, transformador e demanda contratada. Com sistema de controle de recarga, o conjunto passa a ser dimensionado por um valor limitado e conhecido, o que na maior parte dos casos mantém o prédio em baixa tensão. O estudo de capacidade é o que diz qual dos dois caminhos vale para o seu prédio.' },
+      { p: 'O condomínio existente tem dois anos para se adequar?', r: 'Só em parte, e esse é o erro de leitura mais comum. Os dois anos, até 15/07/2028, valem apenas para as medidas estruturais — chuveiros interligados ao sistema de hidrantes, detecção e gerenciamento de riscos — e apenas onde já se exige hidrantes e mangotinhos. A parte elétrica, que é justamente a do carregador na vaga, venceu no dia em que a norma entrou em vigor.' },
+      { p: 'Como cada morador paga a energia que gastou carregando?', r: 'Instalando medição por vaga e identificação do usuário na estação. O consumo de cada ponto fica registrado e é repassado ao condômino pelo critério aprovado em assembleia — em geral o kWh medido multiplicado pela tarifa da fatura, com ou sem uma parcela de custo fixo da infraestrutura. Sem individualização, a conta da área comum sobe e todos pagam pelo carro de alguns.' },
+      { p: 'A instalação irregular afeta o seguro do prédio?', r: 'Não afirmamos que a seguradora vai negar cobertura — isso depende da apólice, da perícia e, se houver litígio, do entendimento judicial. O que é concreto: o Código Civil trata do agravamento de risco e do dever de comunicar alteração relevante, e a regulação de sinistro de incêndio costuma pedir o certificado de licenciamento do Corpo de Bombeiros e a documentação técnica das instalações. Se as vagas com recarga não constam do projeto aprovado, essa lacuna aparece.' },
+      { p: 'Vocês vendem e instalam o carregador ou só fazem o projeto?', r: 'Os dois. Fornecemos e instalamos as estações, com sistema de gestão dinâmica de carga quando o dimensionamento exigir, e também atuamos só na parte técnica se o condomínio já comprou o equipamento. Nesse caso conferimos se o modelo atende aos graus de proteção IPX4/IP4X e IK08 e aos modos de recarga admitidos.' },
+      { p: 'Precisa de assembleia para instalar?', r: 'Precisa. A infraestrutura ocupa área comum e a cobrança individualizada muda a rotina de rateio do condomínio, o que exige deliberação. Entregamos o material técnico, as duas hipóteses de custo e a memória de cálculo para o síndico levar à pauta.' },
+    ],
+    relacionados: ['alteracao-de-carga-baixa-tensao', 'projeto-multiplas-unidades-baixa-tensao', 'laudo-tecnico'],
+    keywords: ['carregador de carro elétrico condomínio', 'recarga de veículos elétricos em edifícios', 'SAVE condomínio RN', 'RT 05 CBMRN carregador', 'NBR 17019 condomínio', 'instalação carregador veicular natal', 'ponto de recarga garagem prédio', 'aumento de carga condomínio carregador'],
+    waMsg: 'Olá! Sou síndico(a) e preciso de ajuda com recarga de veículos elétricos na garagem do condomínio.',
+  },
+
+  {
     slug: 'projeto-de-energia-solar',
     chamada: 'Projeto elétrico, ART e solicitação de acesso conduzidos até a homologação da usina.',
     nav: 'Projeto solar',
@@ -18,6 +138,8 @@ export const SERVICOS = [
     descricao:
       'Projeto elétrico, ART e solicitação de acesso da sua usina solar na Cosern, até a homologação. Consultoria técnica em todo o Rio Grande do Norte.',
     badge: 'Geração distribuída',
+    respostaCurta:
+      "Para ligar uma usina solar à rede da Cosern é preciso projeto elétrico com ART, solicitação de acesso protocolada no portal de geração distribuída, parecer de acesso favorável, vistoria e troca do medidor por um bidirecional. Conduzimos todas essas etapas até a homologação, em qualquer município do Rio Grande do Norte. Micro é até 75 kW; acima disso e até 5 MW é minigeração, com documentação e prazos maiores.",
     resumo:
       'Do dimensionamento à troca do medidor: elaboramos o projeto elétrico, emitimos a ART e conduzimos a solicitação de acesso no portal de geração distribuída da Cosern até a homologação da usina.',
     paraQuem: [
@@ -69,6 +191,8 @@ export const SERVICOS = [
     descricao:
       'Estruturação de EMUC e geração compartilhada na Cosern: condomínios e grupos de empresas dividindo a energia de uma usina, com rateio regularizado.',
     badge: 'Condomínios e grupos',
+    respostaCurta:
+      "Uma única usina pode abastecer várias unidades consumidoras por meio de EMUC, geração compartilhada ou autoconsumo remoto — cada arranjo tem requisito próprio de titularidade e vínculo entre as unidades. Fazemos o enquadramento correto, o projeto e o cadastro do rateio na Cosern, para que o crédito chegue em cada UC na proporção definida.",
     resumo:
       'Uma usina, várias unidades consumidoras recebendo crédito. Estruturamos o empreendimento com múltiplas unidades consumidoras (EMUC) e a geração compartilhada dentro das regras da Cosern, do enquadramento ao rateio.',
     paraQuem: [
@@ -120,6 +244,8 @@ export const SERVICOS = [
     descricao:
       'Inclusão, exclusão e mudança de percentual das unidades beneficiárias na Cosern. Crédito vai para quem consome, em vez de vencer em 60 meses.',
     badge: 'Créditos de energia',
+    respostaCurta:
+      "O rateio é o percentual de crédito de energia que cada unidade beneficiária recebe da usina, e ele só muda por pedido formal à distribuidora — a soma precisa fechar 100%. Protocolamos a alteração na Cosern, incluímos ou excluímos unidades e acompanhamos até a nova divisão aparecer na fatura.",
     resumo:
       'Crédito sobrando em uma UC e faltando em outra significa dinheiro parado — e crédito tem validade de 60 meses. Fazemos a alteração de rateio no sistema de compensação da Cosern para o excedente ir onde ele realmente abate a conta.',
     paraQuem: [
@@ -168,6 +294,8 @@ export const SERVICOS = [
     descricao:
       'ART de projeto, execução e manutenção para sistemas fotovoltaicos no RN, com responsável técnico habilitado para assinar o processo na Cosern.',
     badge: 'Responsabilidade técnica',
+    respostaCurta:
+      "A ART é a Anotação de Responsabilidade Técnica registrada no CREA que vincula um profissional habilitado ao projeto ou à execução da instalação. A Cosern exige ART válida na solicitação de acesso, independentemente do porte do sistema: sem ela o processo não avança. Emitimos a ART com responsável técnico próprio, inclusive para sistemas já instalados por terceiros.",
     resumo:
       'A distribuidora não aceita projeto sem responsável técnico. Assumimos a responsabilidade técnica do seu processo — ART de projeto, de execução ou de manutenção — com o profissional habilitado que a Cosern exige.',
     paraQuem: [
@@ -216,6 +344,8 @@ export const SERVICOS = [
     descricao:
       'Laudo técnico com inspeção, termografia e análise de geração para usinas solares no RN. Documento formal para seguro, banco ou disputa com fornecedor.',
     badge: 'Perícia e inspeção',
+    respostaCurta:
+      "Laudo técnico é o documento assinado por engenheiro que atesta a condição de uma instalação elétrica ou de um sistema fotovoltaico, com inspeção, medições, registro fotográfico e ART. Serve para exigência da distribuidora, seguradora, cartório, financiamento ou disputa com o fornecedor que executou a obra.",
     resumo:
       'Quando é preciso provar tecnicamente o que está acontecendo na usina — para o seguro, para o banco, para a distribuidora ou para cobrar o fornecedor — o laudo técnico é o documento que sustenta a conversa.',
     paraQuem: [
@@ -251,7 +381,7 @@ export const SERVICOS = [
       { p: 'Fazem termografia?', r: 'Sim, quando o caso pede: termografia identifica pontos quentes em módulos e conexões que a inspeção visual não mostra e que costumam anteceder falha.' },
       { p: 'Vale a pena antes de comprar uma usina usada?', r: 'Vale. Uma inspeção antes da compra revela degradação, reparo improvisado e pendência de homologação — problemas que passam a ser seus depois da assinatura.' },
     ],
-    relacionados: ['analise-de-problemas', 'art-projeto-solar-cosern', 'projeto-de-energia-solar'],
+    relacionados: ['carregador-de-veiculo-eletrico-condominio', 'analise-de-problemas', 'art-projeto-solar-cosern'],
     keywords: ['laudo técnico fotovoltaico', 'laudo energia solar natal', 'perícia sistema fotovoltaico rn', 'inspeção usina solar', 'termografia painel solar natal'],
     waMsg: 'Olá! Preciso de um laudo técnico do meu sistema fotovoltaico.',
   },
@@ -266,6 +396,8 @@ export const SERVICOS = [
     descricao:
       'Diagnóstico quando a usina gera pouco, os créditos não aparecem na fatura ou a conta segue alta mesmo com energia solar instalada. Atendimento no RN.',
     badge: 'Diagnóstico',
+    respostaCurta:
+      "Quando a usina está instalada e a conta continua alta, a causa costuma ser uma destas: sistema não homologado, rateio errado, medidor não trocado, classe de consumo incorreta ou geração abaixo do projetado. Fazemos o diagnóstico com base na fatura, no projeto e nos dados de geração, e dizemos o que dá para resolver antes de qualquer proposta.",
     resumo:
       'Instalou solar e a conta não caiu? O problema pode estar na usina, no cadastro da compensação ou na fatura — e o caminho da solução é completamente diferente em cada caso. Começamos identificando qual dos três é.',
     paraQuem: [
@@ -316,6 +448,8 @@ export const SERVICOS = [
     descricao:
       'Troca de titular da unidade consumidora na Cosern, inclusive com energia solar e créditos envolvidos. Documentação conferida antes do protocolo.',
     badge: 'Cadastro',
+    respostaCurta:
+      "A troca de titular da conta de energia na Cosern transfere a responsabilidade pela unidade consumidora para quem passou a ocupar o imóvel — e, quando há usina, exige também a atualização do cadastro de geração distribuída. Sem isso, o crédito continua vinculado ao titular antigo. Protocolamos a alteração e acompanhamos até a fatura sair no nome certo.",
     resumo:
       'Compra, venda, herança, fim de locação ou mudança de CNPJ: a titularidade precisa acompanhar quem de fato usa a energia. Com usina instalada, a troca exige cuidado extra — é possível perder crédito acumulado se for feita do jeito errado.',
     paraQuem: [
@@ -366,6 +500,8 @@ export const SERVICOS = [
     descricao:
       'Análise e troca de modalidade tarifária no RN: convencional, branca, verde e azul. Estudo com 12 meses de faturas reais antes de pedir a mudança.',
     badge: 'Tarifa',
+    respostaCurta:
+      "Modalidade tarifária é a regra de cobrança aplicada à unidade — convencional, branca, verde ou azul — e a escolha errada custa dinheiro todo mês. Analisamos o histórico de consumo e demanda dos últimos 12 meses, simulamos as opções cabíveis e protocolamos a mudança na Cosern quando ela é vantajosa.",
     resumo:
       'Modalidade tarifária errada é dinheiro perdido todo mês, sem que nada apareça como erro na fatura. Analisamos o seu perfil de consumo e demanda, calculamos o melhor enquadramento e conduzimos a alteração junto à Cosern.',
     paraQuem: [
@@ -415,6 +551,8 @@ export const SERVICOS = [
     descricao:
       'Auditoria das faturas da Cosern: cobrança indevida, tributo errado, compensação incorreta e recuperação de valores pagos a mais. Atendimento no RN.',
     badge: 'Auditoria',
+    respostaCurta:
+      "A revisão de faturas confere tarifa, bandeira, tributos, demanda faturada, ultrapassagem, reativos e compensação de créditos contra o que a regulação permite cobrar. Quando aparece cobrança indevida, montamos o memorial de cálculo e pedimos a devolução do período à Cosern.",
     resumo:
       'Fatura de energia é um documento cheio de rubricas que quase ninguém confere. Auditamos 12 meses de contas, identificamos cobranças indevidas e conduzimos a contestação junto à Cosern.',
     paraQuem: [
@@ -465,6 +603,8 @@ export const SERVICOS = [
     descricao:
       'Condução técnica de demandas na Cosern: ligação nova, aumento de carga, danos elétricos, religação e processos travados no atendimento. Todo o RN.',
     badge: 'Representação técnica',
+    respostaCurta:
+      "Protocolo aberto sem resposta, pedido negado sem fundamentação, obra parada, religação que não acontece: esses casos se resolvem apresentando o pedido com a base regulatória certa e escalando pelos canais próprios, incluindo ouvidoria e ANEEL quando cabível. Assumimos a condução da demanda do início ao desfecho.",
     resumo:
       'Processo parado no atendimento, protocolo sem resposta, exigência que ninguém explica. Assumimos a condução técnica da demanda junto à Cosern, com a linguagem e a documentação que o processo exige.',
     paraQuem: [
@@ -515,6 +655,8 @@ export const SERVICOS = [
     descricao:
       'Projeto de entrada de energia em baixa tensão no RN: padrão de ligação, dimensionamento, ART e protocolo na Cosern para ligação nova ou regularização.',
     badge: 'Ligação e entrada',
+    respostaCurta:
+      "A ligação nova de uma unidade consumidora em baixa tensão exige projeto do padrão de entrada compatível com a carga instalada, memorial, ART e protocolo de solicitação de ligação na Cosern. Dimensionamos o padrão, elaboramos o projeto e conduzimos o processo até a energia ser ligada.",
     resumo:
       'Toda ligação nova em baixa tensão passa por um padrão de entrada aprovado. Fazemos o projeto conforme a norma da distribuidora, emitimos a ART e protocolamos o pedido — inclusive quando a obra já foi executada fora do padrão e precisa ser regularizada.',
     paraQuem: [
@@ -566,6 +708,8 @@ export const SERVICOS = [
     descricao:
       'Aumento ou redução de carga instalada em BT na Cosern: novo dimensionamento, adequação do padrão de entrada, troca de fases e protocolo. Atendimento no RN.',
     badge: 'Carga instalada',
+    respostaCurta:
+      "Aumento de carga é o pedido formal à Cosern para elevar a carga instalada da unidade quando novos equipamentos — ar-condicionado, motores, carregador de veículo elétrico — passam a exigir mais do que o padrão atual suporta. Envolve novo dimensionamento do padrão de entrada, projeto com ART e protocolo. Acima de 75 kW a unidade migra para média tensão, o que muda todo o escopo da obra.",
     resumo:
       'Instalou ar-condicionado, forno, motor ou carregador de carro elétrico e o disjuntor começou a desarmar? A carga contratada precisa acompanhar. Fazemos o novo dimensionamento, a adequação do padrão e o pedido de alteração de carga.',
     paraQuem: [
@@ -602,7 +746,7 @@ export const SERVICOS = [
       { p: 'Passar para trifásico aumenta minha conta?', r: 'Muda o custo de disponibilidade, que é o mínimo faturado mensalmente: 30 kWh no monofásico, 50 no bifásico e 100 no trifásico. Por isso a decisão precisa ser técnica, não por precaução.' },
       { p: 'Dá para reduzir carga?', r: 'Dá, e faz sentido quando a instalação foi superdimensionada — reduzir o tipo de ligação diminui o mínimo faturado. Avaliamos se a carga real permite.' },
     ],
-    relacionados: ['projeto-unidade-baixa-tensao', 'alteracao-de-demanda', 'consultoria-de-faturamento'],
+    relacionados: ['carregador-de-veiculo-eletrico-condominio', 'projeto-unidade-baixa-tensao', 'alteracao-de-demanda'],
     keywords: ['aumento de carga cosern', 'alteração de carga baixa tensão', 'trocar para trifásico cosern', 'disjuntor desarmando conta de luz', 'carregador carro elétrico instalação rn'],
     waMsg: 'Olá! Preciso alterar a carga da minha unidade consumidora na Cosern.',
   },
@@ -617,6 +761,8 @@ export const SERVICOS = [
     descricao:
       'Projeto de entrada coletiva para prédios, condomínios e galerias no RN: centro de medição, prumada, área comum e protocolo junto à Cosern.',
     badge: 'Prédios e condomínios',
+    respostaCurta:
+      "Prédios, condomínios e conjuntos comerciais com várias unidades consumidoras precisam de projeto de entrada coletiva: centro de medição agrupado, ramal, proteções e o dimensionamento de cada medidor mais o da área comum. Elaboramos o projeto com ART e conduzimos a aprovação e a ligação na Cosern.",
     resumo:
       'Prédio, condomínio ou galeria: várias unidades atrás de uma entrada coletiva, com centro de medição, prumada e a UC própria da área comum. Fazemos o projeto conforme a norma da distribuidora e conduzimos o processo até a energização.',
     paraQuem: [
@@ -653,7 +799,7 @@ export const SERVICOS = [
       { p: 'Dá para individualizar a medição de um prédio antigo?', r: 'Depende da infraestrutura existente: espaço para o centro de medição e viabilidade de prumada. Avaliamos em visita antes de prometer qualquer coisa.' },
       { p: 'Quem contrata: a construtora ou o condomínio?', r: 'Na obra, a construtora ou o incorporador. Depois de entregue, o condomínio, representado pelo síndico. O que muda é a documentação exigida no protocolo.' },
     ],
-    relacionados: ['multiplas-unidades-consumidoras', 'projeto-unidade-baixa-tensao', 'alteracao-de-demanda'],
+    relacionados: ['carregador-de-veiculo-eletrico-condominio', 'multiplas-unidades-consumidoras', 'projeto-unidade-baixa-tensao'],
     keywords: ['projeto múltiplas unidades consumidoras cosern', 'centro de medição prédio', 'entrada coletiva condomínio natal', 'individualização de medição rn', 'projeto elétrico predial natal'],
     waMsg: 'Olá! Preciso de projeto de entrada para múltiplas unidades (prédio/condomínio).',
   },
@@ -668,6 +814,8 @@ export const SERVICOS = [
     descricao:
       'Revisão e alteração da demanda contratada no Grupo A: fim da multa por ultrapassagem e da demanda paga sem uso. Estudo com 12 meses de faturas reais.',
     badge: 'Grupo A',
+    respostaCurta:
+      "Demanda contratada é a potência que a unidade do Grupo A reserva na rede — pagar por demanda ociosa ou tomar multa de ultrapassagem são os dois lados do mesmo erro de contrato. Analisamos 12 meses de medição, calculamos a demanda ótima e protocolamos a alteração contratual na Cosern.",
     resumo:
       'Demanda contratada acima do necessário é dinheiro pago sem uso; abaixo, é multa por ultrapassagem. Analisamos 12 meses de medição, calculamos o contrato ideal e conduzimos a alteração junto à Cosern.',
     paraQuem: [
@@ -718,6 +866,8 @@ export const SERVICOS = [
     descricao:
       'Correção de classe de consumo, endereço, CPF/CNPJ e contatos na Cosern. Cadastro errado gera tarifa errada, entrega de fatura perdida e processo travado.',
     badge: 'Cadastro',
+    respostaCurta:
+      "Classe de consumo, endereço, CPF/CNPJ e contatos errados no cadastro da Cosern produzem tarifa errada e fatura que não chega. Corrigimos o cadastro com a documentação que comprova o uso real da unidade e pedimos a revisão do que foi cobrado a mais no período.",
     resumo:
       'Cadastro é o que define a tarifa que você paga. Unidade rural classificada como comercial, residência cadastrada como comércio, endereço desatualizado: tudo isso custa dinheiro em silêncio. Corrigimos o cadastro e pedimos a revisão do que foi cobrado a mais.',
     paraQuem: [

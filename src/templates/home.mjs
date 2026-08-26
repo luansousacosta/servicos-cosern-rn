@@ -9,6 +9,10 @@ const FAQ_HOME = [
     r: 'Somos consultor autorizado Cosern, o que nos habilita a conduzir processos junto à distribuidora. Não somos a Cosern e não falamos em nome dela: atuamos representando você, mediante procuração, para protocolar, acompanhar prazos e responder exigências.',
   },
   {
+    p: 'Condomínio pode instalar carregador de carro elétrico na garagem?',
+    r: 'Pode, mas desde 15 de julho de 2026 a Resolução Técnica nº 05 do CBMRN exige estação dedicada em modo 3 ou 4, circuito exclusivo por vaga, DR de 30 mA por ponto, disjuntor de corte, sinalização normativa e 5 m de afastamento das rotas de fuga. Carregador portátil ligado na tomada da vaga não é regularizável em garagem interna. Fazemos o diagnóstico, o projeto com ART, o memorial SAVE, a instalação e o aumento de carga na Cosern quando é preciso.',
+  },
+  {
     p: 'Atendem em todo o Rio Grande do Norte?',
     r: 'Sim. A maior parte dos serviços é documental e roda à distância, o que permite atender os 167 municípios do RN. Quando o caso exige inspeção em campo, programamos a visita.',
   },
@@ -31,7 +35,8 @@ const FAQ_HOME = [
 ];
 
 const cardServico = (s) => `
-  <article class="card">
+  <article class="card${s.destaque ? ' card--destaque' : ''}">
+    ${s.destaque ? '<span class="card__selo">Norma em vigor</span>' : ''}
     <div class="card__icone">${ICONES[s.icone] ?? ICONES.sol}</div>
     <h3><a href="/servicos/${s.slug}/">${esc(s.h1)}</a></h3>
     <p>${esc(s.chamada)}</p>
@@ -41,7 +46,7 @@ const cardServico = (s) => `
 export function paginaHome(css, opcoes = {}) {
   const titulo = 'Energia Solar e Cosern no RN | Sousa Costa Energia';
   const descricao =
-    'Consultor autorizado Cosern: projeto solar, carga, demanda, rateio, ART, titularidade, cadastro e revisão de faturas. Atendimento em todo o RN.';
+    'Consultor autorizado Cosern: projeto solar, carregador de carro elétrico em condomínio, alteração de carga, demanda, rateio, ART e revisão de faturas no RN.';
 
   const conteudo = `
 <section class="hero">
@@ -86,6 +91,45 @@ export function paginaHome(css, opcoes = {}) {
       <div class="numero__label">${esc(n.label)}</div>
     </div>`,
     ).join('\n    ')}
+  </div>
+</section>
+
+<section class="faixa-destaque" id="recarga-veicular">
+  <div class="container faixa-destaque__grid">
+    <div>
+      <span class="rotulo rotulo--claro">Novo · norma em vigor no RN</span>
+      <h2>Carregador de carro elétrico na garagem do <span class="destaque">condomínio</span></h2>
+      <p>
+        Desde 15 de julho de 2026 a Resolução Técnica nº 05 do Corpo de Bombeiros do RN é
+        exigível, sem prazo de adaptação para a parte elétrica. E a NBR 17019 obriga o projeto a
+        somar 100% da potência de todos os carregadores — o que joga muitos prédios acima dos
+        75 kW e para fora da baixa tensão. Resolvemos os dois problemas de uma vez.
+      </p>
+      <div class="faixa-destaque__itens">
+        <div>${CHECK_CLARO}<span><strong>Projeto e infraestrutura elétrica</strong><br />com ART, memorial SAVE e FAT para o CBMRN</span></div>
+        <div>${CHECK_CLARO}<span><strong>Medição e rateio por vaga</strong><br />quem carrega o carro paga a energia que usou</span></div>
+        <div>${CHECK_CLARO}<span><strong>Venda e instalação do carregador</strong><br />com controle dinâmico de carga</span></div>
+        <div>${CHECK_CLARO}<span><strong>Aumento de carga na Cosern</strong><br />quando o padrão de entrada não comporta</span></div>
+      </div>
+      <div class="faixa-destaque__acoes">
+        <a class="btn btn--lime" href="/servicos/carregador-de-veiculo-eletrico-condominio/">Ver o serviço completo</a>
+        <a class="btn btn--claro" data-local="faixa-recarga" href="${wa('Olá! Sou síndico(a) e preciso de ajuda com recarga de veículos elétricos na garagem do condomínio.')}" rel="noopener" target="_blank">Falar no WhatsApp</a>
+      </div>
+    </div>
+    <aside class="faixa-destaque__datas" aria-label="Prazos da norma">
+      <div>
+        <span class="faixa-destaque__data">15/07/2026</span>
+        <p>a RT 05 do CBMRN está em vigor — sem prazo de adaptação para as regras elétricas</p>
+      </div>
+      <div>
+        <span class="faixa-destaque__data">15/07/2028</span>
+        <p>prazo final das medidas estruturais em edificações existentes</p>
+      </div>
+      <div>
+        <span class="faixa-destaque__data">Fator 1,0</span>
+        <p>simultaneidade que a NBR 17019 impõe quando não há controle de recarga</p>
+      </div>
+    </aside>
   </div>
 </section>
 
@@ -194,6 +238,19 @@ export function paginaHome(css, opcoes = {}) {
     negocioJsonLd(),
     {
       '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': `${SITE.dominio}/#pagina`,
+      url: `${SITE.dominio}/`,
+      name: titulo,
+      description: descricao,
+      inLanguage: 'pt-BR',
+      isPartOf: { '@id': `${SITE.dominio}/#site` },
+      about: { '@id': `${SITE.dominio}/#negocio` },
+      primaryImageOfPage: `${SITE.dominio}${SITE.ogImagem}`,
+      dateModified: new Date().toISOString().slice(0, 10),
+    },
+    {
+      '@context': 'https://schema.org',
       '@type': 'WebSite',
       '@id': `${SITE.dominio}/#site`,
       url: `${SITE.dominio}/`,
@@ -209,6 +266,7 @@ export function paginaHome(css, opcoes = {}) {
         '@type': 'ListItem',
         position: i + 1,
         name: s.h1,
+        description: s.chamada,
         url: `${SITE.dominio}/servicos/${s.slug}/`,
       })),
     },

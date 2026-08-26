@@ -5,6 +5,9 @@ import { esc, negocioJsonLd, pagina } from './layout.mjs';
 
 const porSlug = (slug) => SERVICOS.find((s) => s.slug === slug);
 
+/** Data de referência quando o serviço não declara `atualizado`. */
+const DATA_BUILD = new Date().toISOString().slice(0, 10);
+
 export function paginaServico(s, css) {
   const url = `${SITE.dominio}/servicos/${s.slug}/`;
   const relacionados = (s.relacionados ?? []).map(porSlug).filter(Boolean);
@@ -37,6 +40,19 @@ export function paginaServico(s, css) {
     </aside>
   </div>
 </section>
+
+${
+  s.respostaCurta
+    ? `<section class="secao secao--compacta">
+  <div class="container">
+    <div class="resposta-rapida">
+      <h2 class="resposta-rapida__titulo">Em resumo</h2>
+      <p>${esc(s.respostaCurta)}</p>
+    </div>
+  </div>
+</section>`
+    : ''
+}
 
 <section class="secao secao--soft">
   <div class="container grade grade--2">
@@ -71,6 +87,28 @@ export function paginaServico(s, css) {
     </div>
   </div>
 </section>
+
+${(s.secoes ?? [])
+  .map(
+    (bloco, i) => `<section class="secao${i % 2 === 0 ? ' secao--soft' : ''}">
+  <div class="container">
+    <span class="rotulo">${esc(bloco.rotulo)}</span>
+    <h2>${esc(bloco.titulo)}</h2>
+    ${bloco.intro ? `<p class="limite-leitura" style="color:var(--muted)">${esc(bloco.intro)}</p>` : ''}
+    <div class="blocos" style="margin-top:36px">
+      ${bloco.itens
+        .map(
+          (it) => `<div class="bloco">
+        <h3>${esc(it.t)}</h3>
+        <p>${esc(it.d)}</p>
+      </div>`,
+        )
+        .join('\n      ')}
+    </div>
+  </div>
+</section>`,
+  )
+  .join('\n')}
 
 <section class="secao secao--soft">
   <div class="container" style="max-width:820px">
@@ -121,8 +159,26 @@ ${
   </div>
 </section>`;
 
+  const atualizado = s.atualizado ?? DATA_BUILD;
+
   const schemas = [
     negocioJsonLd(),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': `${url}#pagina`,
+      url,
+      name: s.h1,
+      description: s.descricao,
+      inLanguage: 'pt-BR',
+      isPartOf: { '@id': `${SITE.dominio}/#site` },
+      about: { '@id': `${url}#servico` },
+      primaryImageOfPage: `${SITE.dominio}${SITE.ogImagem}`,
+      dateModified: atualizado,
+      breadcrumb: { '@id': `${url}#trilha` },
+      // Trecho de resposta direta: é o que buscadores e assistentes citam.
+      abstract: s.respostaCurta ?? s.resumo,
+    },
     {
       '@context': 'https://schema.org',
       '@type': 'Service',
@@ -165,6 +221,7 @@ ${
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
+      '@id': `${url}#trilha`,
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Início', item: `${SITE.dominio}/` },
         { '@type': 'ListItem', position: 2, name: 'Serviços', item: `${SITE.dominio}/#servicos` },

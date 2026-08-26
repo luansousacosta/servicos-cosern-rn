@@ -51,15 +51,19 @@ function copiarPublic() {
   return copiados;
 }
 
-/** Sitemap com prioridade maior na home e data de build. */
+/**
+ * Sitemap. O `lastmod` sai da data declarada no serviço (`atualizado`), não da
+ * data do build: carimbar tudo como alterado a cada deploy é ruído e o Google
+ * passa a ignorar o campo.
+ */
 function sitemap(rotas) {
   const hoje = new Date().toISOString().slice(0, 10);
   const urls = rotas
     .map(
       (r) => `  <url>
     <loc>${SITE.dominio}${r.rota === '/' ? '/' : `${r.rota}/`}</loc>
-    <lastmod>${hoje}</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>${r.lastmod ?? hoje}</lastmod>
+    <changefreq>${r.changefreq ?? 'monthly'}</changefreq>
     <priority>${r.prioridade}</priority>
   </url>`,
     )
@@ -70,7 +74,37 @@ ${urls}
 </urlset>`;
 }
 
+/**
+ * robots.txt. Além do Googlebot, liberamos explicitamente os rastreadores que
+ * alimentam respostas de IA (ChatGPT, Perplexity, Claude, Gemini). Boa parte
+ * das buscas hoje termina numa resposta gerada, e só é citado quem foi lido.
+ */
 const robots = () => `User-agent: *
+Allow: /
+
+# Rastreadores de assistentes de IA — liberados para permitir citação.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: ${SITE.dominio}/sitemap.xml
@@ -103,13 +137,13 @@ function build() {
       .join('\n'),
   );
 
-  const rotas = [{ rota: '/', prioridade: '1.0' }];
+  const rotas = [{ rota: '/', prioridade: '1.0', changefreq: 'weekly' }];
   escreve('/', paginaHome(css));
 
   for (const servico of SERVICOS) {
     const rota = `/servicos/${servico.slug}`;
     escreve(rota, paginaServico(servico, css));
-    rotas.push({ rota, prioridade: '0.9' });
+    rotas.push({ rota, prioridade: servico.destaque ? '0.9' : '0.8', lastmod: servico.atualizado });
   }
 
   fs.writeFileSync(path.join(dist, 'sitemap.xml'), sitemap(rotas));

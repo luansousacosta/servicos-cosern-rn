@@ -39,6 +39,10 @@ export const negocioJsonLd = () => ({
     'REN ANEEL 1.000/2021',
     'Lei 14.300/2022',
     'Tarifas de energia elétrica',
+    'Recarga de veículos elétricos',
+    'ABNT NBR 17019',
+    'Resolução Técnica 05 do CBMRN',
+    'Instalações elétricas de baixa tensão',
   ],
   sameAs: ['https://sousacosta.com.br'],
 });
@@ -51,6 +55,7 @@ const cabecalho = () => `
     </a>
     <nav class="cabecalho__nav" aria-label="Navegação principal">
       <a href="/#servicos">Serviços</a>
+      <a href="/servicos/carregador-de-veiculo-eletrico-condominio/">Recarga veicular</a>
       <a href="/#como-funciona">Como funciona</a>
       <a href="/#perguntas">Dúvidas</a>
       <a class="btn btn--zap cabecalho__cta nav-mobile"
@@ -185,6 +190,8 @@ export function pagina({ titulo, descricao, caminho, conteudo, schemas = [], zap
 <meta name="twitter:description" content="${esc(descricao)}" />
 <meta name="twitter:image" content="${SITE.dominio}${SITE.ogImagem}" />
 
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="/logo-sousa-costa.png" />
 <link rel="preload" href="/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin />

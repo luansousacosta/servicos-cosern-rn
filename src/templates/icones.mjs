@@ -18,6 +18,7 @@ export const ICONES = {
   cartao: svg('<rect x="2.5" y="5" width="19" height="14" rx="2"/><circle cx="8.5" cy="11" r="2"/><path d="M5.2 16.2a3.6 3.6 0 0 1 6.6 0M14.5 10h4M14.5 13.5h4"/>'),
   predios: svg('<path d="M3 21h18M4 21V7a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14M14 21V11a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v10M7 9h1M7 12h1M7 15h1M16.5 13.5h1M16.5 16.5h1"/>'),
   tendencia: svg('<path d="M3 20h18"/><path d="M5 16l4.5-5 3.5 3 5.5-7"/><path d="M15 7h4v4"/>'),
+  carregador: svg('<rect x="3" y="3" width="10" height="18" rx="1.6"/><path d="M3 8h10"/><path d="M6.4 12.2h3.2l-2 3.4h3.2"/><path d="M13 11h3.5a1.5 1.5 0 0 1 1.5 1.5V17a1.6 1.6 0 0 0 3.2 0V9.4l-2.2-2.2"/><path d="M2 21h12"/>'),
   escudo: svg('<path d="M12 2.5l7.5 3v6c0 4.6-3.1 8.7-7.5 10-4.4-1.3-7.5-5.4-7.5-10v-6z"/><path d="M9.2 11.8l1.9 1.9 3.7-3.7"/>'),
 };
 

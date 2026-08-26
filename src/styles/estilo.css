@@ -237,6 +237,66 @@ li { margin-bottom: .5rem; }
   font-size: .82rem; color: rgba(255,255,255,.55);
 }
 
+/* ---------- Resposta direta ---------- */
+/* Primeiro bloco de texto da página: parágrafo autocontido que responde à
+   busca. É o trecho que buscador e assistente têm mais chance de citar. */
+.resposta-rapida {
+  max-width: 78ch; border-left: 3px solid var(--lime);
+  background: var(--bg-soft); padding: 1.5rem 1.75rem; border-radius: 0 14px 14px 0;
+}
+.resposta-rapida__titulo {
+  font-family: 'Sora', system-ui, sans-serif; font-size: .78rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em; color: var(--green); margin-bottom: .6rem;
+}
+.resposta-rapida p { margin: 0; color: var(--text); font-size: 1.02rem; }
+
+/* ---------- Blocos de aprofundamento ---------- */
+.blocos { display: grid; gap: 20px; }
+@media (min-width: 760px) { .blocos { grid-template-columns: repeat(2, 1fr); } }
+.bloco {
+  background: var(--bg); border: 1px solid var(--line);
+  border-radius: var(--radius-card); padding: 24px;
+}
+.secao--soft .bloco { background: var(--bg); }
+.bloco h3 { font-size: 1.05rem; margin-bottom: .45rem; }
+.bloco p { color: var(--muted); font-size: .94rem; margin: 0; }
+
+/* ---------- Faixa de destaque (serviço em evidência) ---------- */
+.faixa-destaque {
+  background: linear-gradient(135deg, var(--indigo-dark), var(--indigo));
+  color: #fff; padding: 80px 0;
+}
+.faixa-destaque h2 { color: #fff; }
+.faixa-destaque > .container > div > p { color: rgba(255,255,255,.86); max-width: 62ch; }
+.faixa-destaque .destaque { color: var(--lime); background-image: none; }
+.rotulo--claro { color: var(--lime); }
+.faixa-destaque__grid { display: grid; gap: 40px; align-items: start; }
+@media (min-width: 980px) { .faixa-destaque__grid { grid-template-columns: 1.25fr .75fr; gap: 56px; align-items: center; } }
+.faixa-destaque__itens { display: grid; gap: .9rem; margin-top: 1.75rem; }
+@media (min-width: 620px) { .faixa-destaque__itens { grid-template-columns: repeat(2, 1fr); } }
+.faixa-destaque__itens > div { display: flex; gap: .6rem; align-items: flex-start; font-size: .92rem; color: rgba(255,255,255,.86); }
+.faixa-destaque__itens svg { flex: none; margin-top: .3rem; }
+.faixa-destaque__itens strong { color: #fff; }
+.faixa-destaque__acoes { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+.faixa-destaque__datas {
+  display: grid; gap: 1.25rem;
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16);
+  border-radius: var(--radius-card); padding: 28px;
+}
+.faixa-destaque__data {
+  font-family: 'Instrument Serif', Georgia, serif; font-size: 2rem; line-height: 1; color: var(--lime);
+}
+.faixa-destaque__datas p { margin: .35rem 0 0; font-size: .88rem; color: rgba(255,255,255,.78); }
+
+/* ---------- Card em destaque ---------- */
+.card--destaque { position: relative; border-color: var(--lime); box-shadow: var(--shadow-card); }
+.card__selo {
+  position: absolute; top: -11px; left: 24px;
+  background: var(--lime); color: var(--ink);
+  font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  padding: .28rem .6rem; border-radius: 999px;
+}
+
 /* ---------- WhatsApp flutuante ---------- */
 .zap {
   position: fixed; right: 20px; bottom: 20px; z-index: 60;
