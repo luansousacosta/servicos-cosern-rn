@@ -51,7 +51,10 @@ const cabecalho = () => `
 <header class="cabecalho">
   <div class="container cabecalho__interno">
     <a class="cabecalho__logo" href="/" aria-label="${esc(SITE.nome)} — página inicial">
-      <img src="/logo-sousa-costa.png" alt="${esc(SITE.nome)}" width="160" height="40" />
+      <picture>
+        <source srcset="/logo-cabecalho.webp" type="image/webp" />
+        <img src="/logo-cabecalho.png" alt="${esc(SITE.nome)}" width="185" height="40" fetchpriority="high" />
+      </picture>
     </a>
     <nav class="cabecalho__nav" aria-label="Navegação principal">
       <a href="/#servicos">Serviços</a>
@@ -70,7 +73,10 @@ const rodape = () => `
   <div class="container">
     <div class="rodape__grid">
       <div>
-        <img class="rodape__logo" src="/logo-sousa-costa-branca.png" alt="${esc(SITE.nome)}" width="160" height="42" loading="lazy" />
+        <picture>
+          <source srcset="/logo-rodape.webp" type="image/webp" />
+          <img class="rodape__logo" src="/logo-rodape.png" alt="${esc(SITE.nome)}" width="189" height="42" loading="lazy" decoding="async" />
+        </picture>
         <p>Consultor autorizado Cosern. Projetos de energia e condução de processos junto à distribuidora, em todo o Rio Grande do Norte.</p>
         <p>
           <a href="${wa('Olá! Vim pelo site.')}" rel="noopener" target="_blank" data-local="rodape">WhatsApp ${esc(CONTATO.whatsappExibicao)}</a><br />
@@ -131,11 +137,23 @@ function medicao() {
     ? `if(zap){gtag('event','conversion',{send_to:'${adsConversaoWhatsapp}'});}`
     : '';
 
+  // A biblioteca do Google Tag pesa ~335 KiB e ~475 ms de thread principal.
+  // O stub gtag() e a fila dataLayer ficam inline, então nada é perdido: as
+  // chamadas feitas antes ficam na fila e são processadas quando a biblioteca
+  // chega. Ela é injetada no `load` ou na primeira interação, o que vier antes —
+  // sai do caminho crítico do LCP sem custar pageview nem conversão.
   return `
-<script async src="https://www.googletagmanager.com/gtag/js?id=${idCarregador}"></script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 gtag('js',new Date());${configs}
+(function(){var carregada=0;function carregar(){if(carregada)return;carregada=1;
+var s=document.createElement('script');s.async=1;
+s.src='https://www.googletagmanager.com/gtag/js?id=${idCarregador}';
+document.head.appendChild(s)}
+if(document.readyState==='complete')carregar();
+else addEventListener('load',carregar,{once:true});
+['pointerdown','keydown','touchstart'].forEach(function(t){
+  addEventListener(t,carregar,{once:true,passive:true})})})();
 document.addEventListener('click',function(e){
   var a=e.target.closest&&e.target.closest('a');if(!a)return;
   var href=a.getAttribute('href')||'';
@@ -213,6 +231,6 @@ ${botaoZap(zapMsg ?? 'Olá! Vim pelo site e preciso de ajuda.')}
   if (!relativizar) return html;
 
   return html
-    .replace(/(href|src)="\/(?!\/)/g, `$1="${base}`)
+    .replace(/(href|src|srcset)="\/(?!\/)/g, `$1="${base}`)
     .replace(/url\(\/fonts\//g, `url(${base}fonts/`);
 }

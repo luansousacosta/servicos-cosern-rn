@@ -91,8 +91,11 @@ for (const arquivo of arquivos) {
     if (!/\balt="/.test(tag)) falha(rota, `<img> sem alt: ${tag.slice(0, 60)}`);
   }
 
-  // Links internos precisam existir em disco.
-  for (const [, bruto] of html.matchAll(/href="([^"]+)"/g)) {
+  // Links internos e srcset precisam existir em disco. O srcset entrou junto
+  // com o <picture> dos logos: se o prefixo relativo não for aplicado nele, o
+  // WebP quebra quando o site é servido sob subcaminho — e em silêncio, porque
+  // o navegador cai no <img> de fallback.
+  for (const [, bruto] of html.matchAll(/(?:href|srcset)="([^"]+)"/g)) {
     if (/^(https?:|mailto:|tel:|#)/.test(bruto)) continue;
     const href = bruto.split('#')[0];
     if (!href) continue;

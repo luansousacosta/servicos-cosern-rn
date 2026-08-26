@@ -88,7 +88,15 @@ Campos opcionais:
 - `preconnect` para o Google Tag Manager, reduzindo o custo do script de medição no LCP
 - Open Graph e Twitter Card com imagem 1200×630 própria
 - `sitemap.xml` e `robots.txt` gerados no build
-- CSS inline (sem requisição bloqueante), fontes com `display=swap`, imagens com dimensões
+- CSS inline (sem requisição bloqueante), imagens com dimensões declaradas e servidas
+  no tamanho exibido (WebP com fallback PNG)
+- Instrument Serif com `font-display: optional` em vez de `swap`. Medido com a fonte
+  atrasada em 900 ms: `swap` produzia CLS de 0,237 no desktop e 0,171 no celular, porque
+  os títulos são grandes e a fonte ocupa cerca de 78% da largura da serifada de sistema.
+  Com `optional`, 0,005 e 0,000. Sora, que causava 0,005, continua em `swap`.
+- Biblioteca do Google Tag injetada no `load` ou na primeira interação, não no HTML.
+  O stub `gtag()` e a fila `dataLayer` ficam inline, então pageview e conversão não se
+  perdem — só saem do caminho crítico do LCP
 - Heading único por página, links internos entre serviços relacionados, breadcrumb visível
 - Conteúdo em pt-BR com a terminologia que o cliente realmente pesquisa
 
