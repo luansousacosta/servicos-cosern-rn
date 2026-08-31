@@ -17,10 +17,21 @@
  *   Nunca o contrário.
  */
 export const PRECOS = {
-  // 'alteracao-de-dados-cadastrais': 250,
-  // 'alteracao-de-titularidade': 350,
-  // 'consultoria-de-faturamento': 500,
-  // ...
+  // Serviços administrativos, de escopo previsível: o preço é publicado porque
+  // filtra quem procura o serviço gratuito da distribuidora.
+  'alteracao-de-dados-cadastrais': 250,
+  'alteracao-de-titularidade': 350,
+  'analise-de-problemas': 400,
+  'alteracao-de-rateio': 450,
+  'art-projeto-solar-cosern': 450,
+  'consultoria-de-faturamento': 500,
+
+  // Sem preço publicado, de propósito:
+  //   demandas-cosern .................. escopo imprevisível, de trivial a meses
+  //   alteracao-de-modalidade-tarifaria  público específico (Grupo A)
+  //   alteracao-de-demanda ............. público específico (Grupo A)
+  //   laudo-tecnico .................... depende de inspeção e deslocamento
+  //   projeto-* e recarga veicular ..... engenharia, preço é por caso
 };
 
 /** "A partir de R$ 250" — sem centavos, com separador de milhar. */
