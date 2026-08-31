@@ -1,5 +1,6 @@
 import { CONTATO, SITE, wa } from '../data/site.mjs';
 import { SERVICOS } from '../data/servicos.mjs';
+import { precoMinimo } from '../data/precos.mjs';
 import { CHECK, CHECK_CLARO, ICONES } from './icones.mjs';
 import { esc, negocioJsonLd, pagina } from './layout.mjs';
 
@@ -10,6 +11,7 @@ const DATA_BUILD = new Date().toISOString().slice(0, 10);
 
 export function paginaServico(s, css) {
   const url = `${SITE.dominio}/servicos/${s.slug}/`;
+  const preco = precoMinimo(s.slug);
   const relacionados = (s.relacionados ?? []).map(porSlug).filter(Boolean);
 
   const conteudo = `
@@ -29,7 +31,7 @@ export function paginaServico(s, css) {
         <a class="btn btn--primario" data-local="hero" href="${wa(s.waMsg)}" rel="noopener" target="_blank">Falar no WhatsApp</a>
         <a class="btn btn--contorno" href="#como">Como funciona</a>
       </div>
-      <p class="hero__nota">Orçamento sob consulta · Diagnóstico antes da proposta</p>
+      <p class="hero__nota">${preco ? `<strong class="hero__preco">${preco.texto}</strong> · ` : 'Orçamento sob consulta · '}Diagnóstico antes da proposta</p>
     </div>
 
     <aside class="painel" aria-label="O que está incluso">
@@ -212,11 +214,20 @@ ${
         '@type': 'Offer',
         availability: 'https://schema.org/InStock',
         priceCurrency: 'BRL',
-        priceSpecification: {
-          '@type': 'PriceSpecification',
-          priceCurrency: 'BRL',
-          description: 'Orçamento sob consulta',
-        },
+        // Com `minPrice` o Google pode exibir o "a partir de" no resultado —
+        // e o preço na SERP filtra o clique antes de ele custar dinheiro.
+        priceSpecification: preco
+          ? {
+              '@type': 'PriceSpecification',
+              priceCurrency: 'BRL',
+              minPrice: preco.valor,
+              valueAddedTaxIncluded: true,
+            }
+          : {
+              '@type': 'PriceSpecification',
+              priceCurrency: 'BRL',
+              description: 'Orçamento sob consulta',
+            },
       },
       hasOfferCatalog: {
         '@type': 'OfferCatalog',

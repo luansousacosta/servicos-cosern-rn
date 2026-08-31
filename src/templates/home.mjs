@@ -1,5 +1,6 @@
 import { CIDADES_ATENDIDAS, CONTATO, PROVA, SITE, wa } from '../data/site.mjs';
 import { SERVICOS } from '../data/servicos.mjs';
+import { precoMinimo } from '../data/precos.mjs';
 import { CHECK, CHECK_CLARO, ICONES } from './icones.mjs';
 import { esc, negocioJsonLd, pagina } from './layout.mjs';
 
@@ -40,6 +41,7 @@ const cardServico = (s) => `
     <div class="card__icone">${ICONES[s.icone] ?? ICONES.sol}</div>
     <h3><a href="/servicos/${s.slug}/">${esc(s.h1)}</a></h3>
     <p>${esc(s.chamada)}</p>
+    ${(() => { const p = precoMinimo(s.slug); return p ? `<span class="card__preco">${p.texto}</span>` : ''; })()}
     <a class="card__link" href="/servicos/${s.slug}/">Ver o serviço →</a>
   </article>`;
 

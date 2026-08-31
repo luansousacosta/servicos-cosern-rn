@@ -261,6 +261,14 @@ li { margin-bottom: .5rem; }
 .bloco h3 { font-size: 1.05rem; margin-bottom: .45rem; }
 .bloco p { color: var(--muted); font-size: .94rem; margin: 0; }
 
+/* ---------- Preço mínimo ---------- */
+.hero__preco { color: var(--green); font-weight: 700; }
+.card__preco {
+  display: inline-block; margin-top: .6rem; align-self: flex-start;
+  background: var(--lime-soft); color: var(--green);
+  font-size: .8rem; font-weight: 700; padding: .22rem .6rem; border-radius: 999px;
+}
+
 /* ---------- Bloco de transparência ---------- */
 /* Diz o que o cliente resolve sozinho de graça. Filtra lead desqualificado
    antes do WhatsApp e é o que sustenta a confiança de quem sobra. */
