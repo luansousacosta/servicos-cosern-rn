@@ -73,6 +73,24 @@ ${
   </div>
 </section>
 
+${
+  s.semNos
+    ? `<section class="secao secao--compacta">
+  <div class="container">
+    <div class="transparencia">
+      <span class="rotulo">Transparência</span>
+      <h2>${esc(s.semNos.titulo)}</h2>
+      <p>${esc(s.semNos.texto)}</p>
+      <p class="transparencia__intro">Vale contratar quando:</p>
+      <ul class="lista-check">
+        ${s.semNos.quando.map((q) => `<li>${CHECK}<span>${esc(q)}</span></li>`).join('\n        ')}
+      </ul>
+    </div>
+  </div>
+</section>`
+    : ''
+}
+
 <section class="secao" id="como">
   <div class="container">
     <span class="rotulo">Como funciona</span>

@@ -261,6 +261,18 @@ li { margin-bottom: .5rem; }
 .bloco h3 { font-size: 1.05rem; margin-bottom: .45rem; }
 .bloco p { color: var(--muted); font-size: .94rem; margin: 0; }
 
+/* ---------- Bloco de transparência ---------- */
+/* Diz o que o cliente resolve sozinho de graça. Filtra lead desqualificado
+   antes do WhatsApp e é o que sustenta a confiança de quem sobra. */
+.transparencia {
+  max-width: 78ch; border: 1px solid var(--line); border-left: 3px solid var(--indigo);
+  background: var(--bg-soft); border-radius: 0 14px 14px 0; padding: 28px 32px;
+}
+.transparencia h2 { margin: .3rem 0 .8rem; font-size: clamp(1.5rem, 3vw, 2rem); }
+.transparencia > p { color: var(--text); font-size: .98rem; }
+.transparencia__intro { margin: 1.4rem 0 .8rem; font-weight: 600; color: var(--ink); }
+.transparencia .lista-check li { margin-bottom: .6rem; font-size: .94rem; }
+
 /* ---------- Faixa de destaque (serviço em evidência) ---------- */
 .faixa-destaque {
   background: linear-gradient(135deg, var(--indigo-dark), var(--indigo));

@@ -485,6 +485,18 @@ export const SERVICOS = [
       { p: 'Serve para imóvel alugado?', r: 'Serve, e é recomendável: com a conta no nome de quem ocupa o imóvel, o consumo e eventuais débitos ficam corretamente atribuídos.' },
       { p: 'E em caso de falecimento do titular?', r: 'É possível transferir mediante documentação da sucessão. Os documentos variam conforme o estágio do inventário, e orientamos qual conjunto atende no seu caso.' },
     ],
+    semNos: {
+      titulo: "Quando você não precisa contratar ninguém",
+      texto:
+        "A troca de titular é gratuita na distribuidora. Com o imóvel quite, sem débito, e com o documento do titular anterior ou o contrato de locação em mãos, dá para resolver sozinho pelos canais de atendimento dela, sem pagar nada a ninguém. Somos uma consultoria independente e privada: não somos a distribuidora, não a representamos e não cobramos em nome dela.",
+      quando: [
+        "Existe débito de um titular anterior sendo cobrado de você",
+        "O pedido já foi negado e ninguém explicou o motivo",
+        "Imóvel de inventário, espólio, usufruto ou sem escritura regular",
+        "A unidade tem geração distribuída e o crédito segue vinculado ao titular antigo",
+        "Você é imobiliária ou administradora com volume e não quer alocar equipe nisso",
+      ],
+    },
     relacionados: ['alteracao-de-dados-cadastrais', 'alteracao-de-modalidade-tarifaria', 'demandas-cosern'],
     keywords: ['alteração de titularidade cosern', 'trocar titular conta de luz natal', 'transferir conta de energia rn', 'mudar nome da conta de luz cosern', 'titularidade unidade consumidora'],
     waMsg: 'Olá! Preciso alterar a titularidade de uma unidade consumidora na Cosern.',
@@ -588,6 +600,18 @@ export const SERVICOS = [
       { p: 'Minha conta subiu muito de um mês para o outro.', r: 'Pode ser leitura estimada, troca de medidor, mudança de bandeira, carga nova ou falha na compensação. A auditoria da série identifica o ponto exato da virada.' },
       { p: 'Como é a cobrança do serviço?', r: 'Orçamento sob consulta, definido depois de olharmos o porte da unidade e o volume de faturas. Casos de recuperação de valores podem ser combinados com parte vinculada ao resultado.' },
     ],
+    semNos: {
+      titulo: "Reclamar é de graça. O que cobramos é outra coisa",
+      texto:
+        "Contestar uma fatura na distribuidora não custa nada: você abre a reclamação pelos canais dela e, se não resolver, pode ir à ouvidoria e à ANEEL, também sem custo. O que cobramos é a análise técnica — conferir tarifa, bandeira, tributos, demanda, ultrapassagem, reativos e compensação de créditos contra o que a regulação permite cobrar — e montar o memorial de cálculo que sustenta o pedido. Reclamação sem memorial costuma voltar negada, e aí o problema continua.",
+      quando: [
+        "A conta subiu sem explicação e a reclamação já voltou negada",
+        "Cobrança de recuperação de consumo, o chamado TOI",
+        "Unidade do Grupo A com demanda contratada, ultrapassagem ou reativos",
+        "O valor em discussão é alto o bastante para o trabalho técnico se pagar",
+        "Empresa com várias unidades consumidoras e nenhuma conferência sistemática",
+      ],
+    },
     relacionados: ['alteracao-de-modalidade-tarifaria', 'demandas-cosern', 'analise-de-problemas'],
     keywords: ['revisão de fatura cosern', 'cobrança indevida energia rn', 'auditoria conta de luz empresa', 'consultoria faturamento energia natal', 'recuperação de consumo cosern'],
     waMsg: 'Olá! Quero uma revisão das faturas de energia da minha unidade.',
@@ -693,6 +717,18 @@ export const SERVICOS = [
       { p: 'Meu padrão foi reprovado. E agora?', r: 'A inspeção aponta o que está fora da norma. Fazemos o diagnóstico, corrigimos o projeto e orientamos a execução antes de pedir nova inspeção, para não queimar mais uma visita.' },
       { p: 'Mono, bi ou trifásico: quem decide?', r: 'A carga instalada decide. Acima de certos limites a distribuidora exige mais fases. Dimensionar isso na largada evita ter que fazer alteração de carga logo depois.' },
     ],
+    semNos: {
+      titulo: "O que é gratuito e o que não é",
+      texto:
+        "Abrir a solicitação de ligação nova na distribuidora é gratuito e você mesmo faz pelos canais de atendimento dela. O que não é gratuito — nem opcional — é o projeto do padrão de entrada com responsável técnico, que a norma da distribuidora exige e que nenhuma concessionária elabora para você. É isso que fazemos: não cobramos pela solicitação, cobramos pelo projeto e pela condução técnica.",
+      quando: [
+        "A carga da unidade exige projeto elétrico com responsabilidade técnica",
+        "O padrão já foi reprovado na inspeção e você não sabe o que corrigir",
+        "Ligação trifásica ou carga acima do padrão residencial simples",
+        "Obra, empreendimento, unidade comercial ou rural",
+        "Você não tem quem dimensione disjuntor, ramal, aterramento e proteção",
+      ],
+    },
     relacionados: ['alteracao-de-carga-baixa-tensao', 'projeto-multiplas-unidades-baixa-tensao', 'art-projeto-solar-cosern'],
     keywords: ['projeto de entrada de energia natal', 'padrão de entrada cosern', 'ligação nova cosern rn', 'projeto baixa tensão rn', 'padrão de ligação reprovado'],
     waMsg: 'Olá! Preciso de projeto de entrada em baixa tensão para uma unidade consumidora.',
@@ -905,6 +941,17 @@ export const SERVICOS = [
       { p: 'Mudar dado cadastral é a mesma coisa que trocar o titular?', r: 'Não. Alteração cadastral corrige informações do mesmo titular (grafia do nome, endereço, contato, classe). Trocar quem é o responsável pela conta é alteração de titularidade, que tem processo e documentos próprios.' },
       { p: 'Não recebo minha fatura. Resolve?', r: 'Resolve, quando a causa é endereço de correspondência desatualizado. Aproveitamos para cadastrar fatura por e-mail, que elimina o problema de vez.' },
     ],
+    semNos: {
+      titulo: "Boa parte disso você resolve sozinho",
+      texto:
+        "Atualizar endereço de correspondência, telefone ou e-mail é gratuito e leva minutos nos canais de atendimento da distribuidora. Não contrate ninguém para isso. O que justifica um serviço técnico é a mudança de classe de consumo, que exige comprovar o uso real do imóvel e, quando cabe, pedir de volta o que foi cobrado a mais no período.",
+      quando: [
+        "Propriedade rural faturada como comercial ou residencial",
+        "Classe de consumo errada há muitos meses, com diferença acumulada relevante",
+        "O pedido de correção já foi negado por falta de documentação",
+        "Você quer a revisão retroativa, que exige memorial de cálculo do período",
+      ],
+    },
     relacionados: ['alteracao-de-titularidade', 'consultoria-de-faturamento', 'alteracao-de-modalidade-tarifaria'],
     keywords: ['alteração de dados cadastrais cosern', 'mudar classe de consumo energia', 'tarifa rural cosern', 'atualizar cadastro conta de luz rn', 'classe errada na fatura de energia'],
     waMsg: 'Olá! Preciso corrigir os dados cadastrais da minha unidade consumidora na Cosern.',
