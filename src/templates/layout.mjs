@@ -1,4 +1,4 @@
-import { ANALYTICS, CONTATO, SITE, wa } from '../data/site.mjs';
+import { ANALYTICS, CONTATO, EMPRESA, SITE, wa } from '../data/site.mjs';
 import { SERVICOS } from '../data/servicos.mjs';
 import { ZAP } from './icones.mjs';
 
@@ -77,7 +77,7 @@ const rodape = () => `
           <source srcset="/logo-rodape.webp" type="image/webp" />
           <img class="rodape__logo" src="/logo-rodape.png" alt="${esc(SITE.nome)}" width="189" height="42" loading="lazy" decoding="async" />
         </picture>
-        <p>Consultor autorizado Cosern. Projetos de energia e condução de processos junto à distribuidora, em todo o Rio Grande do Norte.</p>
+        <p>Projetos de energia e condução de processos junto à distribuidora, em todo o Rio Grande do Norte.</p>
         <p>
           <a href="${wa('Olá! Vim pelo site.')}" rel="noopener" target="_blank" data-local="rodape">WhatsApp ${esc(CONTATO.whatsappExibicao)}</a><br />
           <a href="tel:+${esc(CONTATO.whatsappAlt)}">${esc(CONTATO.whatsappAltExibicao)}</a><br />
@@ -98,8 +98,11 @@ const rodape = () => `
       </div>
     </div>
     <p class="rodape__base">
-      © ${new Date().getFullYear()} ${esc(SITE.nome)} · Natal/RN · Atendimento nos 167 municípios do Rio Grande do Norte.<br />
-      Consultor autorizado Cosern. Atuamos representando o cliente perante a distribuidora, mediante procuração — não somos a Neoenergia Cosern e não respondemos por ela.
+      © ${new Date().getFullYear()} ${esc(EMPRESA.razaoSocial)} · CNPJ ${esc(EMPRESA.cnpj)}<br />
+      ${esc(EMPRESA.endereco)} · Atendimento nos 167 municípios do Rio Grande do Norte.<br />
+      <a href="/politica-de-privacidade/">Política de privacidade</a><br />
+      Somos uma empresa independente de consultoria e engenharia, <strong>sem vínculo societário ou contratual com a Neoenergia Cosern</strong>.
+      Atuamos representando o cliente perante a distribuidora mediante procuração outorgada por ele.
       Prazos citados são os previstos na regulação da ANEEL e não constituem garantia de prazo da distribuidora.
     </p>
   </div>

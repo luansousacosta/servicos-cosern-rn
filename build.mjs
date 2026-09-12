@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 import { SERVICOS } from './src/data/servicos.mjs';
 import { SITE } from './src/data/site.mjs';
 import { paginaHome } from './src/templates/home.mjs';
+import { paginaPrivacidade } from './src/templates/privacidade.mjs';
 import { paginaServico } from './src/templates/servico.mjs';
 
 const raiz = path.dirname(fileURLToPath(import.meta.url));
@@ -145,6 +146,9 @@ function build() {
     escreve(rota, paginaServico(servico, css));
     rotas.push({ rota, prioridade: servico.destaque ? '0.9' : '0.8', lastmod: servico.atualizado });
   }
+
+  escreve('/politica-de-privacidade', paginaPrivacidade(css));
+  rotas.push({ rota: '/politica-de-privacidade', prioridade: '0.2', changefreq: 'yearly' });
 
   fs.writeFileSync(path.join(dist, 'sitemap.xml'), sitemap(rotas));
   fs.writeFileSync(path.join(dist, 'robots.txt'), robots());

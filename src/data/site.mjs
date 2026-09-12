@@ -6,13 +6,24 @@ export const SITE = {
   nomeCurto: 'Sousa Costa',
   titulo: 'Serviços para energia solar e Cosern no RN',
   descricao:
-    'Consultor autorizado Cosern no RN: projeto solar, recarga de veículos elétricos em condomínios, alteração de carga, demanda, rateio, titularidade, modalidade tarifária, ART, laudo técnico e revisão de faturas.',
+    'Consultoria em energia no RN: projeto solar, recarga de veículos elétricos em condomínios, alteração de carga, demanda, rateio, titularidade, modalidade tarifária, ART, laudo técnico e revisão de faturas.',
   idioma: 'pt-BR',
   regiao: 'RN',
   cidade: 'Natal',
   logo: '/logo-sousa-costa.png',
   logoBranca: '/logo-sousa-costa-branca.png',
   ogImagem: '/og-servicos.png',
+};
+
+/**
+ * Dados cadastrais da empresa. Vão no rodapé de todas as páginas: é o que
+ * identifica quem está por trás do site para o visitante, para o Código de
+ * Defesa do Consumidor e para a análise das plataformas de anúncio.
+ */
+export const EMPRESA = {
+  razaoSocial: 'Sousa Costa LTDA',
+  cnpj: '48.725.763/0001-26',
+  endereco: 'Rua Vitória, 17 — Amarante, São Gonçalo do Amarante/RN, CEP 59296-692',
 };
 
 export const CONTATO = {

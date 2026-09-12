@@ -7,7 +7,7 @@ import { esc, negocioJsonLd, pagina } from './layout.mjs';
 const FAQ_HOME = [
   {
     p: 'Vocês são da Cosern?',
-    r: 'Somos consultor autorizado Cosern, o que nos habilita a conduzir processos junto à distribuidora. Não somos a Cosern e não falamos em nome dela: atuamos representando você, mediante procuração, para protocolar, acompanhar prazos e responder exigências.',
+    r: 'Não. Somos uma empresa independente de consultoria e engenharia em energia, sem vínculo com a Neoenergia Cosern. O que fazemos é representar você perante a distribuidora: com uma procuração sua, protocolamos o processo, acompanhamos os prazos e respondemos às exigências no seu lugar.',
   },
   {
     p: 'Condomínio pode instalar carregador de carro elétrico na garagem?',
@@ -48,13 +48,13 @@ const cardServico = (s) => `
 export function paginaHome(css, opcoes = {}) {
   const titulo = 'Energia Solar e Cosern no RN | Sousa Costa Energia';
   const descricao =
-    'Consultor autorizado Cosern: projeto solar, carregador de carro elétrico em condomínio, alteração de carga, demanda, rateio, ART e revisão de faturas no RN.';
+    'Projeto solar, carregador de carro elétrico em condomínio, carga, rateio, ART e revisão de faturas no RN. Conduzimos o processo na Cosern por procuração.';
 
   const conteudo = `
 <section class="hero">
   <div class="container hero__grid">
     <div>
-      <span class="pill">${CHECK} Consultor autorizado Cosern · Rio Grande do Norte</span>
+      <span class="pill">${CHECK} Engenharia e consultoria em energia · Rio Grande do Norte</span>
       <h1>Resolvemos o que <span class="destaque">trava</span> seu projeto solar e sua conta de energia na Cosern</h1>
       <p class="hero__sub">
         Projeto e homologação de usinas, rateio de créditos, ART, laudo técnico, titularidade,
@@ -75,7 +75,7 @@ export function paginaHome(css, opcoes = {}) {
       <div class="painel__numero">12+ anos</div>
       <p class="painel__texto">de energia no Rio Grande do Norte — projeto, execução e operação de usinas.</p>
       <div class="painel__lista">
-        <div class="painel__item">${CHECK_CLARO}<span>Consultor autorizado Cosern, com acesso aos canais da distribuidora</span></div>
+        <div class="painel__item">${CHECK_CLARO}<span>Processos protocolados e acompanhados junto à Cosern no seu nome</span></div>
         <div class="painel__item">${CHECK_CLARO}<span>Processo conduzido de ponta a ponta, com procuração</span></div>
         <div class="painel__item">${CHECK_CLARO}<span>Responsável técnico próprio para assinar e responder exigências</span></div>
         <div class="painel__item">${CHECK_CLARO}<span>Diagnóstico antes do orçamento: você sabe o que está comprando</span></div>
