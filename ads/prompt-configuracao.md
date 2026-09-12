@@ -56,7 +56,7 @@ Sitelinks (4), cada um apontando para a URL indicada:
   - "Alteração de rateio"  → https://servicos.sousacosta.com.br/servicos/alteracao-de-rateio/
   - "Revisão de faturas"   → https://servicos.sousacosta.com.br/servicos/consultoria-de-faturamento/
   - "Ligação nova"         → https://servicos.sousacosta.com.br/servicos/projeto-unidade-baixa-tensao/
-Frases de destaque: Consultor autorizado · 12+ anos no RN · Orçamento sem compromisso ·
+Frases de destaque: Empresa independente · 12+ anos no RN · Orçamento sem compromisso ·
 Atendemos todo o RN
 Chamada (telefone): (84) 99126-0677
 

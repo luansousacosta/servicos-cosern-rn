@@ -62,7 +62,7 @@ Aplicar nas três, iguais:
 Configurar uma vez, na conta:
 
 - **Sitelinks** (mínimo 4): Projeto solar · Alteração de rateio · Revisão de faturas · Ligação nova
-- **Frases de destaque:** Consultor autorizado · 12+ anos no RN · Orçamento sem compromisso · Atendemos todo o RN
+- **Frases de destaque:** Empresa independente · 12+ anos no RN · Orçamento sem compromisso · Atendemos todo o RN
 - **Chamada:** (84) 99126-0677
 - **Local:** vincular o Perfil da Empresa no Google assim que ele existir
 
@@ -99,21 +99,29 @@ remanejar verba com base em dado, não em impressão.
 
 ---
 
-## Atenção: uso da marca "Cosern" nos anúncios
+## Atenção: nunca alegar autorização ou vínculo
 
-Os textos desta pasta **não citam "Cosern"** nos títulos e descrições, de propósito.
+Os textos desta pasta **não citam "Cosern"** nos títulos e descrições, e **não dizem
+"consultor autorizado"**. As duas regras são permanentes.
 
-Usar marca de terceiro como **palavra-chave** é permitido pelo Google. Usar no **texto
-do anúncio** pode ser reprovado se o titular da marca tiver restrição registrada — e
-grupos de distribuidoras normalmente têm. Anúncio reprovado por marca registrada
-derruba o grupo inteiro até você recorrer.
+**"Consultor autorizado" saiu de todos os anúncios em 12/09/2026.** Aparecia em 12
+lugares — 7 títulos e 5 descrições, em 9 dos 10 anúncios. A Neoenergia Cosern não
+credencia consultores, então a frase afirmava um credenciamento que não existe. Pior:
+o site já havia sido corrigido e passou a declarar explicitamente que não há vínculo
+com a distribuidora, o que criava contradição direta entre o anúncio e a página de
+destino — exatamente o que um analista de recurso lê como deturpação. No lugar dela
+entraram afirmações verdadeiras e comprováveis: "Consultoria Independente",
+"12+ Anos de Energia no RN" e "Atuamos por procuração do cliente".
 
-Como você é consultor autorizado, existe caminho: o Google tem formulário de
-autorização de uso de marca, preenchido pelo titular. Enquanto isso não estiver
-resolvido, rode com os textos atuais, que passam sem risco.
+Usar marca de terceiro como **palavra-chave** é permitido pelo Google, e é o que
+`palavras-chave.csv` faz. Usar no **texto do anúncio** pode ser reprovado se o titular
+tiver restrição registrada — e grupos de distribuidoras normalmente têm. Não existe
+caminho de autorização aqui: o formulário de autorização de marca é preenchido pelo
+**titular da marca**, e não somos autorizados por ele. Portanto "Cosern" fica fora do
+texto do anúncio em definitivo, e "distribuidora" continua sendo a palavra correta.
 
-Se um dia a autorização sair, trocar "distribuidora" por "Cosern" nos títulos costuma
-melhorar a taxa de cliques nessas buscas — mas só depois da autorização.
+Antes de subir qualquer texto novo, a pergunta é uma só: **isto é verdade e está
+comprovável na página de destino?** Se a resposta for não, não sobe.
 
 ---
 

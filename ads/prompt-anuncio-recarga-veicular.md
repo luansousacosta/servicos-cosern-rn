@@ -69,11 +69,11 @@ Projeto de Recarga Veicular
 Síndico: Vagas Regulares
 Projeto com ART e Memorial
 Medição e Rateio por Vaga
-Sem Aumentar o Padrão
+Avaliamos a Carga Antes
 Controle de Recarga
 Engenheiro Responsável
 Vendemos e Instalamos
-Consultor Autorizado
+12+ Anos de Energia no RN
 Atendemos Todo o RN
 Fale no WhatsApp
 
