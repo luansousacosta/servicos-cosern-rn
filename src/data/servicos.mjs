@@ -661,7 +661,7 @@ export const SERVICOS = [
     faq: [
       { p: 'Queimou meu equipamento por causa da rede. Tenho direito?', r: 'A regulação prevê pedido de ressarcimento por danos elétricos, com prazos definidos para solicitar, para a distribuidora inspecionar, responder e pagar. Quanto antes você registrar, maior a chance de a apuração ser conclusiva.' },
       { p: 'Meu protocolo está sem resposta há semanas.', r: 'Cada serviço tem prazo regulatório. Quando ele estoura, o caminho é formalizar com fundamentação e, se necessário, escalonar para ouvidoria e ANEEL — o que muda o tratamento dado ao caso.' },
-      { p: 'Vocês são da Cosern?', r: 'Somos consultor autorizado Cosern, habilitados a conduzir processos junto à distribuidora. Não somos a Cosern: representamos você mediante procuração, o que nos permite protocolar e cobrar os prazos em seu nome.' },
+      { p: 'Vocês são da Cosern?', r: 'Não. Somos uma empresa independente de consultoria e engenharia em energia, sem vínculo com a Neoenergia Cosern. Representamos você mediante procuração, o que nos permite protocolar e cobrar os prazos em seu nome.' },
       { p: 'Atendem pessoa física?', r: 'Atendemos pessoa física e jurídica. O que define o atendimento é a natureza do problema, não o porte do cliente.' },
     ],
     relacionados: ['alteracao-de-carga-baixa-tensao', 'consultoria-de-faturamento', 'analise-de-problemas'],
